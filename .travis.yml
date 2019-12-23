@@ -5,15 +5,15 @@ os: linux
 dist: bionic
 
 # meta -------------------------------------------------------------------------
+env:
+  global:
+   - repo="https://mran.microsoft.com/snapshot/2019-09-15"
 language: R
 r: 3.6.1
 sudo: false
 cache:
   packages: true
-env:
-  global:
-   - Date=2019-12-15
-
+  
 # stages -----------------------------------------------------------------------
 stages:
   - name: deploy
@@ -25,7 +25,8 @@ jobs:
       name: "bookdown"
       script: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
 
-# post-build deployments -------------------------------------------------------
+# job lifecycle ----------------------------------------------------------------
+install: R -q -e 'source(".tic/install.R")'
 deploy:
   provider: pages
   local_dir: _book
