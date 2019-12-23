@@ -1,14 +1,15 @@
 # Package Management ------------------------------------------------------
 .install_local_package <- function(){
     .library("devtools")
+    
     devtools::install_local(
         path = ".",
         dependencies = TRUE,
         upgrade = FALSE,
         build = FALSE,
-        build_opts = "--no-multiarch --with-keep.source --no-build-vignettes",
-        Ncpus = parallel::detectCores()
+        build_opts = "--no-multiarch --with-keep.source --no-build-vignettes"
     )
+    
     return(invisible())
 }
 
@@ -34,11 +35,7 @@
     if(is_package_installed(pkg)) return(invisible())
     
     message("--> Installing {", pkg, "}")
-    utils::install.packages(
-        pkg,
-        dependencies = TRUE,
-        Ncpus = parallel::detectCores()
-    )
+    utils::install.packages(pkg, dependencies = TRUE)
     
     return(invisible())
 }
