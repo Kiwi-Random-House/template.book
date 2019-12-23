@@ -1,0 +1,9 @@
+# Preface {-}
+
+## Software Information
+
+This book was built with the following packages and R version.
+
+```{r sessioninfo, results='hold', echo=FALSE}
+sessioninfo::session_info(include_base = FALSE)
+```
