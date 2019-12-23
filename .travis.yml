@@ -1,12 +1,31 @@
 # Enable Continuous Integration with Travis-CI and Netlify
 # https://arm.rbind.io/days/day1/bookdown/
+# OS ---------------------------------------------------------------------------
+os: linux
+dist: bionic
+
+# meta -------------------------------------------------------------------------
 language: R
+r: 3.6.1
 sudo: false
 cache:
   packages: true
+env:
+  global:
+   - Date=2019-12-15
 
-script: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
+# stages -----------------------------------------------------------------------
+stages:
+  - name: deploy
 
+# jobs -------------------------------------------------------------------------
+jobs:
+  include:
+    - stage: "deploy"
+      name: "bookdown"
+      script: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
+
+# post-build deployments -------------------------------------------------------
 deploy:
   provider: pages
   local_dir: _book
