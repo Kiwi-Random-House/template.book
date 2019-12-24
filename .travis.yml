@@ -14,6 +14,7 @@ cache:
 # stages -----------------------------------------------------------------------
 stages:
   - name: deploy
+    if: branch = master | branch = develop
 
 # jobs -------------------------------------------------------------------------
 jobs:
@@ -25,9 +26,20 @@ jobs:
 # job lifecycle ----------------------------------------------------------------
 install: R -q -e 'source(".tic/install.R")'
 deploy:
-  provider: pages
-  local_dir: _book
-  skip_cleanup: true
-  keep-history: true
-  github_token: $GITHUB_PAT
-  target_branch: gh-pages
+  - provider: pages
+    local_dir: _book
+    skip_cleanup: true
+    keep-history: true
+    github_token: $GITHUB_PAT
+    target_branch: gh-pages
+    on:
+      branch: master
+  - provider: pages
+    local_dir: _book
+    skip_cleanup: true
+    keep-history: true
+    github_token: $GITHUB_PAT
+    target_branch: proofreading
+    on:
+      branch: develop
+   
