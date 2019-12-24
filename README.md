@@ -9,5 +9,6 @@
 
 The book has two versions:
 
-* [![Proofreading](https://img.shields.io/badge/Book%20Version-Proofreading-blue.svg)](https://proofreading--template-book.netlify.com/) which is triggered by the `develop` branch]
+* [![Proofreading](https://img.shields.io/badge/Book%20Version-Proofreading-blue.svg)](https://proofreading--template-book.netlify.com/) which is triggered by the `develop` branch
+
 * [![Published](https://img.shields.io/badge/Book%20Version-Published-brightgreen.svg)](https://template-book.netlify.com/) which is triggered by the `master` branch
