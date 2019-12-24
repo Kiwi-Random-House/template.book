@@ -14,7 +14,7 @@ cache:
 # stages -----------------------------------------------------------------------
 stages:
   - name: deploy
-    if: branch = master | branch = develop
+    #if: branch = master | branch = develop
 
 # jobs -------------------------------------------------------------------------
 jobs:
