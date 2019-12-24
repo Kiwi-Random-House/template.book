@@ -26,15 +26,6 @@ jobs:
 # job lifecycle ----------------------------------------------------------------
 install: R -q -e 'source(".tic/install.R")'
 deploy:
-  provider: pages
-  local_dir: _book
-  skip_cleanup: true
-  keep-history: true
-  github_token: $GITHUB_PAT
-  target_branch: gh-pages
-  on:
-   all_branches: true
-deploy:
   - provider: pages
     local_dir: _book
     skip_cleanup: true
