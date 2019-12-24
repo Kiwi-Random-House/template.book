@@ -14,7 +14,7 @@ cache:
 # stages -----------------------------------------------------------------------
 stages:
   - name: deploy
-    #if: branch = master | branch = develop
+    if: branch = master | branch = develop
 
 # jobs -------------------------------------------------------------------------
 jobs:
@@ -32,14 +32,14 @@ deploy:
     keep-history: true
     github_token: $GITHUB_PAT
     target_branch: gh-pages
-      on:
-        branch: master
+    on:
+      branch: master
   - provider: pages
     local_dir: _book
     skip_cleanup: true
     keep-history: true
     github_token: $GITHUB_PAT
     target_branch: proofreading
-      on:
-        branch: develop
+    on:
+      branch: develop
    
