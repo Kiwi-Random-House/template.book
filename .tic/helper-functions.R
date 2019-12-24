@@ -39,3 +39,15 @@
     
     return(invisible())
 }
+
+.get_field_from_DESCRIPTION <- function(field){
+    .read_DESCRIPTION <- function() readLines("DESCRIPTION")
+    field_regex <- paste0("^",field,":")
+    Date_line <- .read_DESCRIPTION()[grep(field_regex, .read_DESCRIPTION())]
+    Date <- trimws(sub(field_regex, "", Date_line))
+}
+
+
+
+
+

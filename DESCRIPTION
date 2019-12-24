@@ -7,7 +7,6 @@ Depends:
     R (>= 3.5)
 Imports: 
     bookdown (>= 0.9), 
-    ggplot2 (>= 3.0.0),  
-    desc (>= 1.2.0)  
+    ggplot2 (>= 3.0.0)
 Remotes: 
     rstudio/bookdown
