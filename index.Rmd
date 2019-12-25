@@ -8,6 +8,5 @@ documentclass: book
 bibliography: [references.bib]
 biblio-style: apalike
 link-citations: yes
-draft: yes
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
