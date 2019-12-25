@@ -10,3 +10,13 @@ biblio-style: apalike
 link-citations: yes
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
+
+# Preface {-}
+
+## Software Information {-}
+
+The R session information when compiling this book is shown below:
+
+```{r sessioninfo, results='hold', echo=FALSE}
+sessioninfo::session_info(include_base = FALSE)
+```
