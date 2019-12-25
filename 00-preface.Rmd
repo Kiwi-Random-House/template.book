@@ -1,6 +1,6 @@
 # Preface {-}
 
-## Software Information
+## Software Information {-}
 
 The R session information when compiling this book is shown below:
 
