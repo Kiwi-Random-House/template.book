@@ -37,7 +37,7 @@ deploy:
   - provider: pages
     local_dir: _book
     skip_cleanup: true
-    keep-history: true
+    keep-history: false
     github_token: $GITHUB_PAT
     target_branch: proofreading
     on:
