@@ -6,7 +6,7 @@ dist: bionic
 
 # meta -------------------------------------------------------------------------
 language: R
-r: 3.6.1
+r: 3.6.2
 sudo: false
 cache:
   packages: true
