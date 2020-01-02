@@ -1,8 +1,9 @@
 Package: placeholder
 Type: Book
 Title: Tidy Book Template
-Description: A guide for how to deploy a book
-URL: https://template-book.netlify.com/
+Description: A guide for how to deploy a book.
+NetlifyURL: https://template-book.netlify.com/
+NetlifyID: 5c028775-217c-44ae-a74d-9bfdf2acc274
 Date: 2020-01-01
 Depends: 
     R (>= 3.5)

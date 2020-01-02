@@ -22,8 +22,8 @@ jobs:
     - stage: "deploy"
       name: "bookdown"
       script: 
-      - Rscript -e 'local({setwd("./manuscript"); bookdown::render_book("index.Rmd", "bookdown::gitbook")})'
-      - Rscript -e 'fs::dir_copy("./manuscript/_book", ".")'
+      - Rscript -e 'local({setwd("./manuscript"); bookdown::render_book("index.Rmd", "all")})'
+      - Rscript -e 'fs::dir_copy("./manuscript/_book", ".", overwrite = TRUE)'
 
 # job lifecycle ----------------------------------------------------------------
 install:
