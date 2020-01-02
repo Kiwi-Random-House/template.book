@@ -44,7 +44,7 @@ deploy:
     skip_cleanup: true
     keep-history: false
     github_token: $GITHUB_PAT
-    target_branch: proofreading
+    target_branch: gh-preview
     on:
       branch: develop
    
