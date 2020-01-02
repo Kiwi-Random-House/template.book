@@ -1,5 +1,15 @@
 # Introduction {#intro}
 
+## Useful Materials
+
+- [`bookdown`: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
+- [`papaja`: Reproducible APA manuscripts with R Markdown](https://crsh.github.io/papaja_man/)
+
+## Prerequisites
+
+
+## Example
+
 You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
 
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
@@ -17,5 +27,3 @@ knitr::kable(
   booktabs = TRUE
 )
 ```
-
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].

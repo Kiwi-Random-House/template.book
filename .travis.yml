@@ -6,7 +6,7 @@ dist: bionic
 
 # meta -------------------------------------------------------------------------
 language: R
-r: 3.6.1
+r: 3.6.2
 sudo: false
 cache:
   packages: true
@@ -21,10 +21,15 @@ jobs:
   include:
     - stage: "deploy"
       name: "bookdown"
-      script: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
+      script: 
+      - Rscript -e 'local({setwd("./manuscript"); bookdown::render_book("index.Rmd", "bookdown::gitbook")})'
+      - Rscript -e 'fs::dir_copy("./manuscript/_book", ".")'
 
 # job lifecycle ----------------------------------------------------------------
-install: R -q -e 'source(".tic/install.R")'
+install:
+  - R -q -e 'if (!require(remotes, quietly = TRUE)) utils::install.packages("remotes")'  
+  - R -q -e 'remotes::install_cran(c("desc", "fs"), quiet = TRUE)' 
+  - R -q -e 'try(options(repos = paste0("https://mran.microsoft.com/snapshot/", desc::description$new()$get_field("Date")))); remotes::install_deps(dependencies = TRUE)'
 deploy:
   - provider: pages
     local_dir: _book
@@ -37,9 +42,9 @@ deploy:
   - provider: pages
     local_dir: _book
     skip_cleanup: true
-    keep-history: true
+    keep-history: false
     github_token: $GITHUB_PAT
-    target_branch: proofreading
+    target_branch: gh-preview
     on:
       branch: develop
    

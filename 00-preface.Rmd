@@ -1,9 +1,0 @@
-# Preface {-}
-
-## Software Information
-
-The R session information when compiling this book is shown below:
-
-```{r sessioninfo, results='hold', echo=FALSE}
-sessioninfo::session_info(include_base = FALSE)
-```
