@@ -42,9 +42,6 @@ vignettes/*.pdf
 _book
 _bookdown_files
 libs/
-/*.log
-/*.Rmd
 /*.pdf
 /*.tex
-
 *.log
