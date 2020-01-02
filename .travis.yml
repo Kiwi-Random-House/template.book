@@ -27,8 +27,7 @@ jobs:
 install:
   - R -q -e 'if (!requireNamespace("remotes")) install.packages("remotes")'
   - R -q -e 'if (!requireNamespace("desc")) install.packages("desc")'
-  - R -q -e 'try(options(repos = paste0("https://mran.microsoft.com/snapshot/", desc::description$new()$get_field("Date"))))'
-  - R -q -e 'remotes::install_deps(dependencies = TRUE)'
+  - R -q -e 'try(options(repos = paste0("https://mran.microsoft.com/snapshot/", desc::description$new()$get_field("Date")))); remotes::install_deps(dependencies = TRUE)'
 deploy:
   - provider: pages
     local_dir: _book
