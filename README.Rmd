@@ -1,0 +1,35 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+`%+%` <- function(a,b) paste0(a,b)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+try(remotes::install_cran(c("desc", "stringr", "yaml")))
+preview_branch <- yaml::read_yaml(".travis.yml")$deploy[[2]]$target_branch
+
+desc_obj <- desc::description$new()
+desc_url <- stringr::str_remove_all(desc_obj$get_urls(), "^https://|http://")
+
+view_badge <- "https://img.shields.io/badge/Book%20Version-Published-brightgreen.svg"
+view_link <- "https://" %+% desc_url
+
+preview_badge <- "https://img.shields.io/badge/Book%20Version-Preview-blue.svg"
+preview_link <- "https://" %+% preview_branch %+% "--" %+% desc_url
+```
+
+# `r desc_obj$get_field("Title")`
+
+<!-- badges: start -->
+[![Published Version](`r view_badge`)](`r view_link`)
+[![Preview Version](`r preview_badge`)](`r preview_link`)
+<!-- badges: end -->
+
+---
+
+`r desc_obj$get_field("Description")`

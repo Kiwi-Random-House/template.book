@@ -1,8 +1,9 @@
 Package: placeholder
 Type: Book
-Title: Does not matter.
-Version: 0.19.52
-Date: 2019-12-15
+Title: Tidy Book Template
+Description: A guide for how to deploy a book
+URL: https://template-book.netlify.com/
+Date: 2020-01-01
 Depends: 
     R (>= 3.5)
 Imports: 
