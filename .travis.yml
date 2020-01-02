@@ -22,7 +22,7 @@ jobs:
     - stage: "deploy"
       name: "bookdown"
       script: 
-      - Rscript -e 'local({setwd("./manuscript"); bookdown::render_book("index.Rmd", "bookdown::gitbook")})'
+      - Rscript -e 'local({setwd("./manuscript"); bookdown::render_book("index.Rmd")})'
       - Rscript -e 'fs::dir_copy("./manuscript/_book", ".")'
 
 # job lifecycle ----------------------------------------------------------------
