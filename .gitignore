@@ -47,3 +47,4 @@ libs/
 /*.pdf
 /*.tex
 
+*.log
