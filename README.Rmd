@@ -14,19 +14,18 @@ try(remotes::install_cran(c("desc", "stringr", "yaml")))
 preview_branch <- yaml::read_yaml(".travis.yml")$deploy[[2]]$target_branch
 
 desc_obj <- desc::description$new()
-desc_url <- stringr::str_remove_all(desc_obj$get_urls(), "^https://|http://")
-
+netlify_url <- stringr::str_remove_all(desc_obj$get_field("NetlifyURL"), "^https://")
 netlify_id <- desc_obj$get_field("NetlifyID")
-netlify_site_name <- stringr::str_remove_all(desc_url, ".netlify.com/")
+netlify_site_name <- stringr::str_remove_all(netlify_url, ".netlify.com/")
 
 netlify_badge <- "https://img.shields.io/netlify/" %+% netlify_id
 netlify_link <- "https://app.netlify.com/sites/" %+% netlify_site_name %+% "/deploys"
 
 view_badge <- "https://img.shields.io/badge/Book%20Version-Published-0087BD.svg"
-view_link <- "https://" %+% desc_url
+view_link <- "https://" %+% netlify_url
 
 preview_badge <- "https://img.shields.io/badge/Book%20Version-Preview-ff69b4.svg"
-preview_link <- "https://" %+% preview_branch %+% "--" %+% desc_url
+preview_link <- "https://" %+% preview_branch %+% "--" %+% netlify_url
 ```
 
 # `r desc_obj$get_field("Title")`

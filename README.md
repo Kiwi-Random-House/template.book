@@ -13,4 +13,4 @@ Status](https://img.shields.io/netlify/5c028775-217c-44ae-a74d-9bfdf2acc274)](ht
 
 -----
 
-A guide for how to deploy a book
+A guide for how to deploy a book.
