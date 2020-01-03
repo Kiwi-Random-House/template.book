@@ -6,6 +6,4 @@
 knitr::include_graphics('images/a9676ba37e5e4ca8b9489239db8cb8d8.png')
 ```
 
-***
-
 Congratulations, you've made it!
