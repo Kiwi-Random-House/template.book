@@ -2,6 +2,6 @@
 
 ## Create a New Book on GitHub using the Template
 
-<center>![](images/a9676ba37e5e4ca8b9489239db8cb8d8.png)</center>
+![](images/a9676ba37e5e4ca8b9489239db8cb8d8.png)
 
 ***
