@@ -107,6 +107,6 @@ bar. Then, click "Edit settings" under "Deploy contexts":
 
 <center>![](images/1db9c26c547348c10d24a7f86ce3d3ca.png)</center>
 
-***
-
 Congratulations, you've made it!
+
+***
