@@ -11,8 +11,6 @@ link-citations: yes
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 graphics: yes
 always_allow_html: yes
-monofont: "Source Code Pro"
-monofontoptions: "Scale=0.7"
 ---
 
 ```{r setup, include=FALSE}
