@@ -6,4 +6,120 @@
 knitr::include_graphics('images/a9676ba37e5e4ca8b9489239db8cb8d8.png')
 ```
 
+***
+
+## Link the Book with Travis
+
+1. Go to [travis-ci.org](https://travis-ci.org/) (not travis-ci.com);
+2. Authorise Travis access to the book’s GitHub repo; and
+3. Toggle legacy service integration for the book’s GitHub repo.
+
+```{r} 
+knitr::include_graphics('images/baef0bd157faee7c5dac5dbe2712c3b6.png')
+```
+
+***
+
+## Add GitHub API to Travis
+
+1. Generate GitHub Personal Access Token (PAT) by either:
+  *	Following the instructions provided on GitHub Help pages; or
+  *	Running the command ```usethis::browse_github_token()```.
+2. Add PAT as an environment variable named `GITHUB_PAT` within project setting.
+
+```{r} 
+knitr::include_graphics('images/0fcd976cfcba59500407c33c05ecd4b0.png')
+```
+
+***
+
+## Trigger Travis to Deploy the Book
+
+Trigger the first deployment on the *master* and *develop* branches.
+You can do it either:
+
+* Directly from GitHub by pushing changes into a new branch call *develop*; or
+* Through [SourceTree](https://www.sourcetreeapp.com/) by:
+  1. Cloning the repo to local computer through SourceTree;
+  2. Initiating Git-flow; and
+  3. Starting a new release named *book-inception*.
+
+At this stage of using the template, there are several items we can update:
+
+1. Rename `template.book.Rproj` to `<book-name>.Rproj`; and
+2. Update the **Title**, **Description** and **Date** fields in DESCRIPTION.
+
+Finally commit the changes:
+
+* If you use GitHub website, then push the changes to the *develop* branch and
+merge the *master* branch.
+* If you use SourceTree, then finish the release and push changes to remote.
+
+```{r} 
+knitr::include_graphics('images/317f5871bf095360684ad70f23eec266.png')
+```
+
+The first deployment takes ~9 minutes to complete. At the end of a
+successful run, two new branches appear in the GitHub repo: *gh-pages* and
+*gh-preview*.
+
+***
+
+## Link the Book with Netlify
+
+1. Go to https://app.netlify.com/; and
+2. Follow the illustrations.
+
+```{r} 
+knitr::include_graphics('images/db5b10aba61256bb01d9731ac2cd0830.png')
+knitr::include_graphics('images/75b90a0fdcfbad8c4cea92c8c0ba013a.png')
+knitr::include_graphics('images/3be8c926bcd3b95f738a64ca8193c3e8.png')
+```
+
+Modify the following by clicking on "Build settings" at the right navigation
+bar. Then, click "Edit settings" under "Deploy contexts":
+
+1. Set "Production branch" to gh-pages;
+2. Set "Branch deploys" to "Let me add individual branches"; and 
+3. Add gh-preview under "Additional branches". 
+
+```{r} 
+knitr::include_graphics('images/da630a35606ef9313dae374c8e8f1cd7.png')
+knitr::include_graphics('images/5aae39e4fb32a148c6d8a59f2c87b5de.png')
+```
+
+***
+
+## Update Site Name on Netlify
+
+```{r} 
+knitr::include_graphics('images/4969813bdca8f1b44bd7b7cd5266ff36.png')
+```
+
+***
+
+## Update Netlify Fields within DESCRIPTION 
+
+1. Update **NetlifyURL** with the site URL; and
+2. Update **NetlifyID** with API ID.
+
+```{r} 
+knitr::include_graphics('images/0d6fe5708049ecd979b23cc75c2ff9dc.png')
+knitr::include_graphics('images/63fd32aaaf30f529e9f1e458e18fbd87.png')
+```
+
+***
+
+## Update GitHub README File
+
+1. Render README.Rmd in R
+2. Push changes 
+
+```{r} 
+knitr::include_graphics('images/1d6ec6730103d6654ec4dc8e03c642be.png')
+knitr::include_graphics('images/1db9c26c547348c10d24a7f86ce3d3ca.png')
+```
+
+***
+
 Congratulations, you've made it!
