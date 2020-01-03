@@ -6,8 +6,6 @@
 knitr::include_graphics('images/a9676ba37e5e4ca8b9489239db8cb8d8.png')
 ```
 
-
-
 ## Link the Book with Travis
 
 1. Go to [travis-ci.org](https://travis-ci.org/) (not travis-ci.com);
@@ -17,8 +15,6 @@ knitr::include_graphics('images/a9676ba37e5e4ca8b9489239db8cb8d8.png')
 ```{r} 
 knitr::include_graphics('images/baef0bd157faee7c5dac5dbe2712c3b6.png')
 ```
-
-
 
 ## Add GitHub API to Travis
 
@@ -30,8 +26,6 @@ knitr::include_graphics('images/baef0bd157faee7c5dac5dbe2712c3b6.png')
 ```{r} 
 knitr::include_graphics('images/0fcd976cfcba59500407c33c05ecd4b0.png')
 ```
-
-
 
 ## Trigger Travis to Deploy the Book
 
@@ -63,8 +57,6 @@ The first deployment takes ~9 minutes to complete. At the end of a
 successful run, two new branches appear in the GitHub repo: *gh-pages* and
 *gh-preview*.
 
-
-
 ## Link the Book with Netlify
 
 1. Go to https://app.netlify.com/; and
@@ -88,15 +80,11 @@ knitr::include_graphics('images/da630a35606ef9313dae374c8e8f1cd7.png')
 knitr::include_graphics('images/5aae39e4fb32a148c6d8a59f2c87b5de.png')
 ```
 
-
-
 ## Update Site Name on Netlify
 
 ```{r} 
 knitr::include_graphics('images/4969813bdca8f1b44bd7b7cd5266ff36.png')
 ```
-
-
 
 ## Update Netlify Fields within DESCRIPTION 
 
@@ -107,8 +95,6 @@ knitr::include_graphics('images/4969813bdca8f1b44bd7b7cd5266ff36.png')
 knitr::include_graphics('images/0d6fe5708049ecd979b23cc75c2ff9dc.png')
 knitr::include_graphics('images/63fd32aaaf30f529e9f1e458e18fbd87.png')
 ```
-
-
 
 ## Update GitHub README File
 
