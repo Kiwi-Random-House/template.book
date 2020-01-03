@@ -9,7 +9,20 @@ bibliography: [references.bib]
 biblio-style: apalike
 link-citations: yes
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+graphics: yes
+always_allow_html: yes
 ---
+
+```{r setup, include=FALSE}
+# str(knitr::opts_chunk$get())
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  message = FALSE,
+  warning = FALSE,
+  fig.align = "center",
+  out.width = "100%"
+)
+```
 
 # Preface {-}
 
