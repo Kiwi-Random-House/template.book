@@ -9,8 +9,5 @@ Depends:
     R (>= 3.5)
 Imports: 
     bookdown (>= 0.9), 
-    emo,
     ggplot2 (>= 3.0.0),
     sessioninfo (>= 1.1.1)
-Remotes:
-    hadley/emo
