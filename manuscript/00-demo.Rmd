@@ -120,6 +120,4 @@ knitr::include_graphics('images/1d6ec6730103d6654ec4dc8e03c642be.png')
 knitr::include_graphics('images/1db9c26c547348c10d24a7f86ce3d3ca.png')
 ```
 
-***
-
 Congratulations, you've made it!
