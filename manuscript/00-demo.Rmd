@@ -109,3 +109,4 @@ bar. Then, click "Edit settings" under "Deploy contexts":
 
 ***
 
+`r emo::ji("clap")` Congratulations, you've made it!
