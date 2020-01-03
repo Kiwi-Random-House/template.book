@@ -30,6 +30,7 @@ install:
   - R -q -e 'if (!require(remotes, quietly = TRUE)) utils::install.packages("remotes")'  
   - R -q -e 'remotes::install_cran(c("desc", "fs"), quiet = TRUE)' 
   - R -q -e 'try(options(repos = paste0("https://mran.microsoft.com/snapshot/", desc::description$new()$get_field("Date")))); remotes::install_deps(dependencies = TRUE)'
+after_failure: cat *.log
 deploy:
   - provider: pages
     local_dir: _book
