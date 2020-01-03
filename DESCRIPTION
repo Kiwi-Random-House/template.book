@@ -11,5 +11,3 @@ Imports:
     bookdown (>= 0.9), 
     ggplot2 (>= 3.0.0),
     sessioninfo (>= 1.1.1)
-Remotes: 
-    rstudio/bookdown
