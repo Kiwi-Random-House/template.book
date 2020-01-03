@@ -1,0 +1,17 @@
+# Using the Template {#demo}
+
+## Create a New Book on GitHub using the Template
+
+## Link the Book with Travis
+
+## Add GitHub API to Travis
+
+## Trigger Travis to Deploy the Book
+
+## Link the Book with Netlify
+
+## Update Site Name on Netlify
+
+## Update Netlify Fields within DESCRIPTION 
+
+## Update GitHub README File
