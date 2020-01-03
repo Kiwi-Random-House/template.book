@@ -41,4 +41,5 @@ vignettes/*.pdf
 # Bookdown
 _book
 _bookdown_files
+manuscript/libs/
 *.log
