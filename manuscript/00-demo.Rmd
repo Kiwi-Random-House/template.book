@@ -1,0 +1,45 @@
+# Using the Template {#demo}
+
+## Create a New Book on GitHub using the Template
+
+![](images/a9676ba37e5e4ca8b9489239db8cb8d8.png)
+
+## Link the Book with Travis
+
+![](images/baef0bd157faee7c5dac5dbe2712c3b6.png)
+
+## Add GitHub API to Travis
+
+![](images/0fcd976cfcba59500407c33c05ecd4b0.png)
+
+## Trigger Travis to Deploy the Book
+
+![](images/317f5871bf095360684ad70f23eec266.png)
+
+## Link the Book with Netlify
+
+![](images/db5b10aba61256bb01d9731ac2cd0830.png)
+
+![](images/75b90a0fdcfbad8c4cea92c8c0ba013a.png)
+
+![](images/3be8c926bcd3b95f738a64ca8193c3e8.png)
+
+![](images/da630a35606ef9313dae374c8e8f1cd7.png)
+
+![](images/5aae39e4fb32a148c6d8a59f2c87b5de.png)
+
+## Update Site Name on Netlify
+
+![](images/4969813bdca8f1b44bd7b7cd5266ff36.png)
+
+## Update Netlify Fields within DESCRIPTION 
+
+![](images/0d6fe5708049ecd979b23cc75c2ff9dc.png)
+
+![](images/63fd32aaaf30f529e9f1e458e18fbd87.png)
+
+## Update GitHub README File
+
+![](images/1d6ec6730103d6654ec4dc8e03c642be.png)
+
+![](images/1db9c26c547348c10d24a7f86ce3d3ca.png)
