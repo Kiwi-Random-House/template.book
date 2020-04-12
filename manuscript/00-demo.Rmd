@@ -34,8 +34,11 @@ Only needed when deploying from builds on Travis CI or GitHub Actions.
 ```{r, eval=FALSE, echo=TRUE}
 # Install travis R package
 remotes::install_github("ropenscilabs/travis")
+
+ travis::use_travis_deploy()
   
 # Generate SSH
+travis::browse_travis_token()
 travis::use_travis_deploy()
 ```
 
