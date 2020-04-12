@@ -24,6 +24,7 @@ get_stage("after_failure") %>%
 
 # Stage: Before Deploy ----------------------------------------------------
 get_stage("before_deploy") %>%
+    add_stepstep_install_cran("fs") %>% 
     add_step(step_setup_ssh(private_key_name = "TIC_DEPLOY_KEY")) %>% 
     add_step(step_setup_push_deploy(path = ".", branch = deploy_branch))
 
@@ -31,7 +32,7 @@ get_stage("before_deploy") %>%
 get_stage("deploy") %>%
     add_code_step(setwd("./manuscript")) %>% 
     add_step(step_build_bookdown(input = "index.Rmd", output_format = "all", output_dir = "_book")) %>% 
-    add_code_step(print(list.dirs())) %>% 
+    add_code_step(fs::dir_copy("./manuscript/_book", ".")) %>% 
     add_step(step_do_push_deploy(path = "_book"))
 
 # Stage: After Deploy -----------------------------------------------------
