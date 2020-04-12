@@ -34,7 +34,8 @@ get_stage("deploy") %>%
     # add_step(step_build_bookdown(input = "index.Rmd", output_format = "all", output_dir = "_book")) %>% 
     add_step(step_build_bookdown(input = "index.Rmd", output_format = NULL, output_dir = "_book")) %>% 
     add_code_step(setwd("..")) %>% 
-    add_code_step(print(fs::dir_ls(recursive = TRUE))) %>%
+    add_code_step(fs::file_delete(".gitignore")) %>%
+    add_code_step(print(fs::dir_ls(recurse = TRUE))) %>%
     add_code_step(fs::dir_delete("./_book")) %>%
     add_code_step(fs::dir_copy("./manuscript/_book", ".", overwrite = TRUE)) %>% 
     add_step(step_do_push_deploy(path = "_book", commit_message = NULL, commit_paths = "."))
