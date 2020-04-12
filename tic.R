@@ -4,7 +4,6 @@ source("./AppData/tic/helpers.R")
 # Macros ------------------------------------------------------------------
 do_bookdown(
     input = "index.Rmd",
-    #path = "./manuscript", 
     branch = ifelse(is_master_branch(), "gh-pages", "gh-preview")
 )
 
@@ -37,7 +36,8 @@ get_stage("after_failure") %>%
 
 # Stage: Deploy -----------------------------------------------------------
 # if(is_master_branch() | is_develop_branch())
-#     get_stage("deploy") %>% 
+get_stage("deploy") %>%
+    add_code_step(setwd("./manuscript"))
 #     add_step(step_build_blogdown()) %>% 
 #     add_step(step_do_push_deploy(path = "public", commit_message = NULL, commit_paths = "."))
 
