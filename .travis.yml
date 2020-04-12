@@ -10,7 +10,7 @@ r: 3.6.2
 cache:
   - packages
   - ccache
-latex: false
+latex: true
 
 # environment variables --------------------------------------------------------
 env:
