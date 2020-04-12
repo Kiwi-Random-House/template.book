@@ -32,6 +32,7 @@ get_stage("before_deploy") %>%
 get_stage("deploy") %>%
     add_code_step(setwd("./manuscript")) %>% 
     add_step(step_build_bookdown(input = "index.Rmd", output_format = "all", output_dir = "_book")) %>% 
+    add_code_step(setwd("..")) %>% 
     add_code_step(fs::dir_copy("./manuscript/_book", ".")) %>% 
     add_step(step_do_push_deploy())
 
