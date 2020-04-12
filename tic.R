@@ -29,15 +29,15 @@ get_stage("after_failure") %>%
 
 # Stage: Before Deploy ----------------------------------------------------
 # if(is_master_branch() | is_develop_branch())
-#     get_stage("before_deploy") %>% 
+get_stage("before_deploy") %>%
+    add_code_step(setwd("./manuscript"))
 #     add_code_step(blogdown::install_hugo()) %>% 
 #     add_step(step_setup_ssh(private_key_name = "TIC_DEPLOY_KEY")) %>% 
 #     add_step(step_setup_push_deploy(path = "public", branch = "gh-pages", remote_url = NULL, orphan = FALSE, checkout = TRUE))
 
 # Stage: Deploy -----------------------------------------------------------
 # if(is_master_branch() | is_develop_branch())
-get_stage("deploy") %>%
-    add_code_step(setwd("./manuscript"))
+get_stage("deploy")
 #     add_step(step_build_blogdown()) %>% 
 #     add_step(step_do_push_deploy(path = "public", commit_message = NULL, commit_paths = "."))
 
