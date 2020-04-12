@@ -1,11 +1,6 @@
 library(tic, warn.conflicts = FALSE)
 source("./AppData/tic/helpers.R")
-
-# Macros ------------------------------------------------------------------
-do_bookdown(
-    input = "index.Rmd",
-    branch = ifelse(is_master_branch(), "gh-pages", "gh-preview")
-)
+deploy_branch <- ifelse(is_master_branch(), "gh-pages", "gh-preview")
 
 # Stage: Before Install ---------------------------------------------------
 get_stage("before_install") 
@@ -28,19 +23,15 @@ get_stage("after_failure") %>%
     add_code_step(print(sessioninfo::session_info(include_base = FALSE)))
 
 # Stage: Before Deploy ----------------------------------------------------
-# if(is_master_branch() | is_develop_branch())
 get_stage("before_deploy") %>%
-    add_code_step(setwd("./manuscript"))
-#     add_code_step(blogdown::install_hugo()) %>% 
-#     add_step(step_setup_ssh(private_key_name = "TIC_DEPLOY_KEY")) %>% 
-#     add_step(step_setup_push_deploy(path = "public", branch = "gh-pages", remote_url = NULL, orphan = FALSE, checkout = TRUE))
+    add_step(step_setup_ssh(private_key_name = "TIC_DEPLOY_KEY")) %>% 
+    add_step(step_setup_push_deploy(branch = deploy_branch))
 
 # Stage: Deploy -----------------------------------------------------------
-# if(is_master_branch() | is_develop_branch())
-get_stage("deploy")
-#     add_step(step_build_blogdown()) %>% 
-#     add_step(step_do_push_deploy(path = "public", commit_message = NULL, commit_paths = "."))
+get_stage("deploy") %>%
+    add_code_step(setwd("./manuscript")) %>% 
+    add_step(step_build_bookdown(input = "", output_dir = "_book")) %>% 
+    add_step(step_do_push_deploy(path = "_book"))
 
 # Stage: After Deploy -----------------------------------------------------
-# if(is_master_branch() | is_develop_branch())
-#     get_stage("after_deploy")
+get_stage("after_deploy")
