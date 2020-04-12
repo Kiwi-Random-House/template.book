@@ -37,7 +37,7 @@ get_stage("deploy") %>%
     add_code_step(print(fs::dir_ls(recursive = TRUE))) %>%
     add_code_step(fs::dir_delete("./_book")) %>%
     add_code_step(fs::dir_copy("./manuscript/_book", ".", overwrite = TRUE)) %>% 
-    add_step(step_do_push_deploy())
+    add_step(step_do_push_deploy(path = "_book", commit_message = NULL, commit_paths = "."))
 
 # Stage: After Deploy -----------------------------------------------------
 get_stage("after_deploy")
