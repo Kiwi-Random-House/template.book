@@ -1,14 +1,14 @@
 ---
-output: github_document
+    output: github_document
 ---
 
 ```{r, include = FALSE}
 `%+%` <- function(a,b) paste0(a,b)
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
 )
 try(remotes::install_cran(c("desc", "stringr", "yaml")))
 preview_branch <- yaml::read_yaml(".travis.yml")$deploy[[2]]$target_branch
