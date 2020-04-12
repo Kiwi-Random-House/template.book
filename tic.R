@@ -1,6 +1,9 @@
 library(tic, warn.conflicts = FALSE)
 source("./AppData/tic/helpers.R")
 
+# Macros ------------------------------------------------------------------
+do_bookdown(branch = ifelse(is_master_branch(), "gh-pages", "gh-preview"))
+
 # Stage: Before Install ---------------------------------------------------
 get_stage("before_install") 
 
