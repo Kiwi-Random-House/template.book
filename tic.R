@@ -4,7 +4,7 @@ source("./AppData/tic/helpers.R")
 # Macros ------------------------------------------------------------------
 do_bookdown(
     input = "index.Rmd",
-    path = "./manuscript", 
+    #path = "./manuscript", 
     branch = ifelse(is_master_branch(), "gh-pages", "gh-preview")
 )
 
