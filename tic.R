@@ -26,19 +26,18 @@ get_stage("after_failure") %>%
 get_stage("before_deploy") %>%
     add_step(step_install_cran("fs")) %>% 
     add_step(step_setup_ssh(private_key_name = "TIC_DEPLOY_KEY")) %>% 
-    add_step(step_setup_push_deploy(path = "_book", branch = deploy_branch))
+    add_step(step_setup_push_deploy(path = "_book", branch = deploy_branch, remote_url = NULL, orphan = FALSE, checkout = TRUE))
 
 # Stage: Deploy -----------------------------------------------------------
 get_stage("deploy") %>%
     add_code_step(setwd("./manuscript")) %>% 
-    # add_step(step_build_bookdown(input = "index.Rmd", output_format = "all", output_dir = "_book")) %>% 
-    add_step(step_build_bookdown(input = "index.Rmd", output_format = NULL, output_dir = "_book")) %>% 
+    add_step(step_build_bookdown(input = "index.Rmd", output_format = "all", output_dir = "_book")) %>%
     add_code_step(setwd("..")) %>% 
-    add_code_step(fs::file_delete(".gitignore")) %>%
-    add_code_step(print(fs::dir_ls(recurse = TRUE))) %>%
+    add_code_step(fs::file_delete("./.gitignore")) %>%
     add_code_step(fs::dir_delete("./_book")) %>%
     add_code_step(fs::dir_copy("./manuscript/_book", ".", overwrite = TRUE)) %>% 
-    add_step(step_do_push_deploy(path = "_book", commit_message = NULL, commit_paths = "."))
+    add_step(step_do_push_deploy(path = "./_book", commit_message = NULL, commit_paths = "."))
 
 # Stage: After Deploy -----------------------------------------------------
-get_stage("after_deploy")
+get_stage("after_deploy") %>% 
+    add_code_step(print(fs::dir_ls(all = TRUE, recurse = TRUE)))
