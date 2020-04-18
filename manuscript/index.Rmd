@@ -17,3 +17,10 @@ always_allow_html: yes
 Springer book structure
 https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guidelines/book-manuscript-guidelines/book-structure/5640
 -->
+
+`r if (knitr::is_latex_output()) '<!--'` 
+
+---
+
+`r if (knitr::is_latex_output()) '-->'`
+
