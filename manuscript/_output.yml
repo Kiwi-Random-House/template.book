@@ -14,7 +14,7 @@ bookdown::gitbook:
       after: []
     toolbar:
       position: fixed
-    edit : https://github.com/Kiwi-Random-House/template.book/edit/develop/%s
+    edit : https://github.com/Kiwi-Random-House/template.book/edit/develop/manuscript/%s
     download: ["pdf", "epub"]
     search: yes
     fontsettings:

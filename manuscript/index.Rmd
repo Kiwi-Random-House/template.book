@@ -13,23 +13,27 @@ graphics: yes
 always_allow_html: yes
 ---
 
-```{r setup, include=FALSE}
-# str(knitr::opts_chunk$get())
-knitr::opts_chunk$set(
-  echo = FALSE, 
-  message = FALSE,
-  warning = FALSE,
-  fig.align = "center",
-  out.width = "100%"
-)
-```
+<!--
+Springer book structure
+https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guidelines/book-manuscript-guidelines/book-structure/5640
+-->
 
-# Preface {-}
+`r if (knitr::is_latex_output()) '<!--'` 
 
-## Software Information {-}
+# Welcome {-}
 
-The R session information when compiling this book is shown below:
+This is the online version of _`r DESCRIPTION$get_field("Title")`_, a book
+**currently under early development** and intended for a late 2021 release.
 
-```{r sessioninfo, results='hold', echo=FALSE}
-sessioninfo::session_info(include_base = FALSE)
-```
+### License {-}
+
+This book is licensed to you under [Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International
+License](http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+The code samples in this book are licensed under [Creative Commons CC0 1.0
+Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/), i.e.
+public domain.
+
+`r if (knitr::is_latex_output()) '-->'`
+

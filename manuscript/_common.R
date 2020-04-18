@@ -1,3 +1,5 @@
+DESCRIPTION <- desc::description$new("../DESCRIPTION")
+
 makesvg <- function(name = "svg", width = 300, height = 200) {
     if (name == "svg") {
         selector <- "svg"
@@ -13,10 +15,17 @@ makesvg <- function(name = "svg", width = 300, height = 200) {
 
 knitr::opts_chunk$set(
     out.width='100%',
-    echo = TRUE,
-    comment = "## R output ## ",
+    echo = FALSE,
     message = FALSE,
-    warning = FALSE
+    warning = FALSE,
+    comment = "## R output ## ",
+    # comment = "#>",
+    fig.retina = 0.8, # figures are either vectors or 300 dpi diagrams
+    dpi = 300,
+    out.width = "70%",
+    fig.align = 'center',
+    fig.width = 6,
+    fig.asp = 0.618,  # 1 / phi
+    fig.show = "hold",
+    eval.after = 'fig.cap' # so captions can use link to demos
 )
-
-HTML <- knitr::is_html_output()
