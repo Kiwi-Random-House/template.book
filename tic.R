@@ -1,7 +1,7 @@
 library(tic, warn.conflicts = FALSE)
 source("./AppData/tic/helpers.R")
 deploy_branch <- ifelse(is_master_branch(), "gh-pages", "gh-preview")
-output_format <- ifelse(is_master_branch(), "all", "bookdown::pdf_book")
+output_format <- ifelse(is_master_branch(), "all", "bookdown::gitbook")
 
 # Stage: Before Install ---------------------------------------------------
 get_stage("before_install") 
