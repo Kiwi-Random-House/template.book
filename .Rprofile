@@ -1,5 +1,5 @@
 .First <- function(){
-    is_integrating <- function() identical(Sys.getenv("CI"), "true")
-    if(is_integrating()) return()
-    message("To enable live book preview, go to: RStudio Addins -> BOOKDOWN -> Preview Book")
+    if(identical(Sys.getenv("R_FIRST_SESSION"), FALSE)) return(invisible()) else Sys.setenv(R_FIRST_SESSION = FALSE)
+    message("Enable live book preview: RStudio Addins -> BOOKDOWN -> Preview Book")
+    message("Insert citations: RStudio Addins -> CITR")
 }
