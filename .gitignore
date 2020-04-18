@@ -39,8 +39,8 @@ vignettes/*.pdf
 .Renviron
 
 # Bookdown
-_book
-_bookdown_files
+manuscript/_book
+manuscript/_bookdown_files
 manuscript/libs/
 *.log
 *.md
