@@ -15,22 +15,17 @@ makesvg <- function(name = "svg", width = 300, height = 200) {
 
 knitr::opts_chunk$set(
     out.width='100%',
-    echo = TRUE,
-    comment = "## R output ## ",
+    echo = FALSE,
     message = FALSE,
-    warning = FALSE
+    warning = FALSE,
+    comment = "## R output ## ",
+    # comment = "#>",
+    fig.retina = 0.8, # figures are either vectors or 300 dpi diagrams
+    dpi = 300,
+    out.width = "70%",
+    fig.align = 'center',
+    fig.width = 6,
+    fig.asp = 0.618,  # 1 / phi
+    fig.show = "hold",
+    eval.after = 'fig.cap' # so captions can use link to demos
 )
-
-# ```{r setup, include=FALSE}
-# # str(knitr::opts_chunk$get())
-# knitr::opts_chunk$set(
-#     echo = FALSE, 
-#     message = FALSE,
-#     warning = FALSE,
-#     fig.align = "center",
-#     out.width = "100%"
-# )
-# ```
-
-
-HTML <- knitr::is_html_output()

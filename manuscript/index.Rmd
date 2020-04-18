@@ -12,3 +12,8 @@ description: "This is a minimal example of using the bookdown package to write a
 graphics: yes
 always_allow_html: yes
 ---
+
+<!--
+Springer book structure
+https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guidelines/book-manuscript-guidelines/book-structure/5640
+-->
