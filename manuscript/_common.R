@@ -1,3 +1,5 @@
+DESCRIPTION <- desc::description$new("../DESCRIPTION")
+
 makesvg <- function(name = "svg", width = 300, height = 200) {
     if (name == "svg") {
         selector <- "svg"
@@ -18,5 +20,17 @@ knitr::opts_chunk$set(
     message = FALSE,
     warning = FALSE
 )
+
+# ```{r setup, include=FALSE}
+# # str(knitr::opts_chunk$get())
+# knitr::opts_chunk$set(
+#     echo = FALSE, 
+#     message = FALSE,
+#     warning = FALSE,
+#     fig.align = "center",
+#     out.width = "100%"
+# )
+# ```
+
 
 HTML <- knitr::is_html_output()

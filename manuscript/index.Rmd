@@ -12,24 +12,3 @@ description: "This is a minimal example of using the bookdown package to write a
 graphics: yes
 always_allow_html: yes
 ---
-
-```{r setup, include=FALSE}
-# str(knitr::opts_chunk$get())
-knitr::opts_chunk$set(
-  echo = FALSE, 
-  message = FALSE,
-  warning = FALSE,
-  fig.align = "center",
-  out.width = "100%"
-)
-```
-
-# Preface {-}
-
-## Software Information {-}
-
-The R session information when compiling this book is shown below:
-
-```{r sessioninfo, results='hold', echo=FALSE}
-sessioninfo::session_info(include_base = FALSE)
-```
