@@ -3,11 +3,12 @@
     message("Enable live book preview: RStudio Addins -> BOOKDOWN -> Preview Book")
     message("Insert citations: RStudio Addins -> CITR")
     DESCRIPTION <- desc::description$new("./DESCRIPTION")
+    bookdown::clean_book(TRUE)
+    unlink(list.files("./manuscript", "\\.md$", full.names = TRUE), force = TRUE, recursive = TRUE)
 }
 
 .Last <- function(){
     message("Cleaing Up")
-    
     unlink("./manuscript/_book", force = TRUE, recursive = TRUE)
     unlink("./manuscript/_bookdown_files", force = TRUE, recursive = TRUE)
 }
