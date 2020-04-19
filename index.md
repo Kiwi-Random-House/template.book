@@ -18,35 +18,19 @@ favicon: "favicon.ico"
 ---
 
 <!--
-
-https://bookdown.org/yihui/bookdown/html.html
-
----
-title: "An Awesome Book"
-author: "John Smith"
-description: "This book introduces the ABC theory, and ..."
-url: 'https\://bookdown.org/john/awesome/'
-github-repo: "john/awesome"
-cover-image: "images/cover.png"
-apple-touch-icon: "touch-icon.png"
-apple-touch-icon-size: 120
-favicon: "favicon.ico"
----
-
--->
-
-<!--
-
 Springer book structure
 https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guidelines/book-manuscript-guidelines/book-structure/5640
 -->
 
  
 
+<img src="images/cover.png" width="70%" style="display: block; margin: auto;" />
+
 # Welcome {-}
 
 This is the online version of _Tidy Book Template_, a book
-**currently under early development** and intended for a late 2021 release.
+**currently under early development** and intended for a late
+2020 release.
 
 ### License {-}
 
