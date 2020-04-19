@@ -2,7 +2,7 @@
 --- 
 title: "Tidy Book Template"
 subtitle: "A Guide for How to Deploy a Book"
-author: "Harel Lustiger"
+author: ""
 date: "2020-04-19"
 site: bookdown::bookdown_site
 documentclass: book
