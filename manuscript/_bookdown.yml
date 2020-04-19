@@ -1,7 +1,10 @@
+rmd_subdir: "manuscript"
 output_dir: "_book"
 book_filename: "template.book"
 delete_merged_file: true
+new_session: yes
 language:
   ui:
     chapter_name: "Chapter "
     appendix_name: "Appendix "
+before_chapter_script: "_common.R"

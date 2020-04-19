@@ -27,15 +27,16 @@ knitr::include_graphics('images/baef0bd157faee7c5dac5dbe2712c3b6.png')
 knitr::include_graphics('images/0fcd976cfcba59500407c33c05ecd4b0.png')
 ```
 
-## SSH key pair via travis
+## Set SSH key pair via travis
 
 Only needed when deploying from builds on Travis CI or GitHub Actions. 
 
 ```{r, eval=FALSE, echo=TRUE}
 # Install travis R package
 remotes::install_github("ropenscilabs/travis")
-  
+
 # Generate SSH
+travis::browse_travis_token()
 travis::use_travis_deploy()
 ```
 

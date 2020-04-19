@@ -1,6 +1,7 @@
 library(tic, warn.conflicts = FALSE)
 source("./AppData/tic/helpers.R")
 deploy_branch <- ifelse(is_master_branch(), "gh-pages", "gh-preview")
+output_format <- ifelse(is_master_branch(), "all", "bookdown::gitbook")
 
 # Stage: Before Install ---------------------------------------------------
 get_stage("before_install") 
@@ -31,7 +32,7 @@ get_stage("before_deploy") %>%
 # Stage: Deploy -----------------------------------------------------------
 get_stage("deploy") %>%
     add_code_step(setwd("./manuscript")) %>% 
-    add_step(step_build_bookdown(input = "index.Rmd", output_format = "all", output_dir = "_book")) %>%
+    add_step(step_build_bookdown(input = "index.Rmd", output_format = output_format, output_dir = "_book")) %>%
     add_code_step(setwd("..")) %>% 
     add_code_step(unlink(c("./README.Rmd", "./.gitigore"), force = TRUE)) %>% 
     add_code_step(fs::dir_copy("./manuscript/_book", "./_book", overwrite = TRUE)) %>% 
