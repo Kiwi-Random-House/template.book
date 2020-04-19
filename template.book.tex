@@ -1,0 +1,517 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Tidy Book Template},
+            pdfauthor={Harel Lustiger},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Tidy Book Template}
+\providecommand{\subtitle}[1]{}
+\subtitle{A Guide for How to Deploy a Book.}
+\author{Harel Lustiger}
+\date{2020-04-19}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{demo}{%
+\chapter{Using the Template}\label{demo}}
+
+\hypertarget{create-a-new-book-on-github-using-the-template}{%
+\section{Create a New Book on GitHub using the Template}\label{create-a-new-book-on-github-using-the-template}}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/a9676ba37e5e4ca8b9489239db8cb8d8} \end{center}
+
+\hypertarget{link-the-book-with-travis}{%
+\section{Link the Book with Travis}\label{link-the-book-with-travis}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Go to \href{https://travis-ci.org/}{travis-ci.org} (not travis-ci.com);
+\item
+  Authorise Travis access to the book's GitHub repo; and
+\item
+  Toggle legacy service integration for the book's GitHub repo.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/baef0bd157faee7c5dac5dbe2712c3b6} \end{center}
+
+\hypertarget{add-github-api-to-travis}{%
+\section{Add GitHub API to Travis}\label{add-github-api-to-travis}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Generate GitHub Personal Access Token (PAT) by either:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Following the instructions provided on GitHub Help pages; or
+\item
+  Running the command \texttt{usethis::browse\_github\_token()}.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Add PAT as an environment variable named \texttt{GITHUB\_PAT} within project setting.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/0fcd976cfcba59500407c33c05ecd4b0} \end{center}
+
+\hypertarget{set-ssh-key-pair-via-travis}{%
+\section{Set SSH key pair via travis}\label{set-ssh-key-pair-via-travis}}
+
+Only needed when deploying from builds on Travis CI or GitHub Actions.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Install travis R package}
+\NormalTok{remotes}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"ropenscilabs/travis"}\NormalTok{)}
+
+\CommentTok{# Generate SSH}
+\NormalTok{travis}\OperatorTok{::}\KeywordTok{browse_travis_token}\NormalTok{()}
+\NormalTok{travis}\OperatorTok{::}\KeywordTok{use_travis_deploy}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{trigger-travis-to-deploy-the-book}{%
+\section{Trigger Travis to Deploy the Book}\label{trigger-travis-to-deploy-the-book}}
+
+Trigger the first deployment on the \emph{master} and \emph{develop} branches.
+You can do it either:
+
+\begin{itemize}
+\tightlist
+\item
+  Directly from GitHub by pushing changes into a new branch call \emph{develop}; or
+\item
+  Through \href{https://www.sourcetreeapp.com/}{SourceTree} by:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Cloning the repo to local computer through SourceTree;
+  \item
+    Initiating Git-flow; and
+  \item
+    Starting a new release named \emph{book-inception}.
+  \end{enumerate}
+\end{itemize}
+
+At this stage of using the template, there are several items we can update:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Rename \texttt{template.book.Rproj} to \texttt{\textless{}book-name\textgreater{}.Rproj}; and
+\item
+  Update the \textbf{Title}, \textbf{Description} and \textbf{Date} fields in DESCRIPTION.
+\end{enumerate}
+
+Finally commit the changes:
+
+\begin{itemize}
+\tightlist
+\item
+  If you use GitHub website, then push the changes to the \emph{develop} branch and
+  merge the \emph{master} branch.
+\item
+  If you use SourceTree, then finish the release and push changes to remote.
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/317f5871bf095360684ad70f23eec266} \end{center}
+
+The first deployment takes \textasciitilde{}9 minutes to complete. At the end of a
+successful run, two new branches appear in the GitHub repo: \emph{gh-pages} and
+\emph{gh-preview}.
+
+\hypertarget{link-the-book-with-netlify}{%
+\section{Link the Book with Netlify}\label{link-the-book-with-netlify}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Go to \url{https://app.netlify.com/}; and
+\item
+  Follow the illustrations.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/db5b10aba61256bb01d9731ac2cd0830} \includegraphics[width=0.7\linewidth]{images/75b90a0fdcfbad8c4cea92c8c0ba013a} \includegraphics[width=0.7\linewidth]{images/3be8c926bcd3b95f738a64ca8193c3e8} \end{center}
+
+Modify the following by clicking on ``Build settings'' at the right navigation
+bar. Then, click ``Edit settings'' under ``Deploy contexts'':
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Set ``Production branch'' to gh-pages;
+\item
+  Set ``Branch deploys'' to ``Let me add individual branches''; and
+\item
+  Add gh-preview under ``Additional branches''.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/da630a35606ef9313dae374c8e8f1cd7} \includegraphics[width=0.7\linewidth]{images/5aae39e4fb32a148c6d8a59f2c87b5de} \end{center}
+
+\hypertarget{update-site-name-on-netlify}{%
+\section{Update Site Name on Netlify}\label{update-site-name-on-netlify}}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/4969813bdca8f1b44bd7b7cd5266ff36} \end{center}
+
+\hypertarget{update-netlify-fields-within-description}{%
+\section{Update Netlify Fields within DESCRIPTION}\label{update-netlify-fields-within-description}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Update \textbf{NetlifyURL} with the site URL; and
+\item
+  Update \textbf{NetlifyID} with API ID.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/0d6fe5708049ecd979b23cc75c2ff9dc} \includegraphics[width=0.7\linewidth]{images/63fd32aaaf30f529e9f1e458e18fbd87} \end{center}
+
+\hypertarget{update-github-readme-file}{%
+\section{Update GitHub README File}\label{update-github-readme-file}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Render README.Rmd in R
+\item
+  Push changes
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{images/1d6ec6730103d6654ec4dc8e03c642be} \includegraphics[width=0.7\linewidth]{images/1db9c26c547348c10d24a7f86ce3d3ca} \end{center}
+
+Congratulations, you've made it!
+
+\hypertarget{part-front-matter}{%
+\part*{Front Matter}\label{part-front-matter}}
+\addcontentsline{toc}{part}{Front Matter}
+
+\hypertarget{title-page}{%
+\chapter*{Title Page}\label{title-page}}
+\addcontentsline{toc}{chapter}{Title Page}
+
+\hypertarget{dedication}{%
+\chapter*{Dedication}\label{dedication}}
+\addcontentsline{toc}{chapter}{Dedication}
+
+\hypertarget{foreword}{%
+\chapter*{Foreword}\label{foreword}}
+\addcontentsline{toc}{chapter}{Foreword}
+
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+\hypertarget{colophon}{%
+\section*{Colophon}\label{colophon}}
+\addcontentsline{toc}{section}{Colophon}
+
+This book was written in \href{http://www.rstudio.com/ide/}{RStudio} using
+\href{http://bookdown.org/}{bookdown}. The \href{http://mastering-shiny.org/}{website} is
+hosted with \href{http://netlify.com/}{netlify}, and automatically updated after
+every commit by \href{https://travis-ci.org/}{travis-ci}. The complete source is
+available from \href{https://github.com/Kiwi-Random-House/template.book}{GitHub}.
+
+This version of the book was built with R version 3.6.2 (2017-01-27) and the following
+packages:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+package & version & source\tabularnewline
+\midrule
+\endhead
+ggplot2 & 3.2.1 & CRAN (R 3.6.2)\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{table-of-contents}{%
+\chapter*{Table of Contents}\label{table-of-contents}}
+\addcontentsline{toc}{chapter}{Table of Contents}
+
+\hypertarget{list-of-abbreviations}{%
+\chapter*{List of Abbreviations}\label{list-of-abbreviations}}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+
+\hypertarget{part-text-body}{%
+\part*{Text Body}\label{part-text-body}}
+\addcontentsline{toc}{part}{Text Body}
+
+\hypertarget{intro}{%
+\chapter{Introduction}\label{intro}}
+
+\hypertarget{terminology}{%
+\section{Terminology}\label{terminology}}
+
+The following terms come up repeatedly in discussion of machine learning\citep{GoogleRulesML}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Instance}: The thing about which you want to make a prediction. For
+  example, the instance might be a web page that you want to classify as either
+  ``about cats'' or ``not about cats''.
+\item
+  \textbf{Label}: An answer for a prediction task; either the answer produced by a
+  machine learning system, or the right answer supplied in training data. For
+  example, the label for a web page might be ``about cats''.
+\item
+  \textbf{Feature}: A property of an instance used in a prediction task. For example,
+  a web page might have a feature ``contains the word `cat'\,''.
+\item
+  \textbf{Feature Column}: A set of related features, such as the set of all possible
+  countries in which users might live. An example may have one or more features
+  present in a feature column. ``Feature column'' is Google-specific terminology. A
+  feature column is referred to as a ``namespace'' in the VW system (at
+  Yahoo/Microsoft), or a field. Example: An instance (with its features) and a
+  label.
+\item
+  \textbf{Model}: A statistical representation of a prediction task. You train a
+  model on examples then use the model to make predictions.
+\item
+  \textbf{Metric}: A number that you care about. May or may not be directly
+  optimized.
+\item
+  \textbf{Objective}: A metric that your algorithm is trying to optimize.
+\item
+  \textbf{Pipeline}: The infrastructure surrounding a machine learning algorithm.
+  Includes gathering the data from the front end, putting it into training data
+  files, training one or more models, and exporting the models to production.
+\end{itemize}
+
+\hypertarget{useful-materials}{%
+\section{Useful Materials}\label{useful-materials}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://bookdown.org/yihui/bookdown/}{\texttt{bookdown}: Authoring Books and Technical Documents with R Markdown}
+\item
+  \href{https://crsh.github.io/papaja_man/}{\texttt{papaja}: Reproducible APA manuscripts with R Markdown}
+\end{itemize}
+
+\hypertarget{prerequisites}{%
+\section{Prerequisites}\label{prerequisites}}
+
+\hypertarget{example}{%
+\section{Example}\label{example}}
+
+You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
+
+Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{201-intro_files/figure-latex/nice-fig-1} 
+
+}
+
+\caption{Here is a nice figure!}\label{fig:nice-fig}
+\end{figure}
+
+Reference a figure by its code chunk label with the \texttt{fig:} prefix, e.g., see Figure \ref{fig:nice-fig}. Similarly, you can reference tables generated from \texttt{knitr::kable()}, e.g., see Table \ref{tab:nice-tab}.
+
+\begin{table}
+
+\caption{\label{tab:nice-tab}Here is a nice table!}
+\centering
+\begin{tabular}[t]{rrrrl}
+\toprule
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\midrule
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
+4.9 & 3.0 & 1.4 & 0.2 & setosa\\
+4.7 & 3.2 & 1.3 & 0.2 & setosa\\
+4.6 & 3.1 & 1.5 & 0.2 & setosa\\
+5.0 & 3.6 & 1.4 & 0.2 & setosa\\
+\addlinespace
+5.4 & 3.9 & 1.7 & 0.4 & setosa\\
+4.6 & 3.4 & 1.4 & 0.3 & setosa\\
+5.0 & 3.4 & 1.5 & 0.2 & setosa\\
+4.4 & 2.9 & 1.4 & 0.2 & setosa\\
+4.9 & 3.1 & 1.5 & 0.1 & setosa\\
+\addlinespace
+5.4 & 3.7 & 1.5 & 0.2 & setosa\\
+4.8 & 3.4 & 1.6 & 0.2 & setosa\\
+4.8 & 3.0 & 1.4 & 0.1 & setosa\\
+4.3 & 3.0 & 1.1 & 0.1 & setosa\\
+5.8 & 4.0 & 1.2 & 0.2 & setosa\\
+\addlinespace
+5.7 & 4.4 & 1.5 & 0.4 & setosa\\
+5.4 & 3.9 & 1.3 & 0.4 & setosa\\
+5.1 & 3.5 & 1.4 & 0.3 & setosa\\
+5.7 & 3.8 & 1.7 & 0.3 & setosa\\
+5.1 & 3.8 & 1.5 & 0.3 & setosa\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{literature}{%
+\chapter{Literature}\label{literature}}
+
+Here is a review of existing methods.
+
+\hypertarget{methods}{%
+\chapter{Methods}\label{methods}}
+
+We describe our methods in this chapter.
+
+\hypertarget{applications}{%
+\chapter{Applications}\label{applications}}
+
+Some \emph{significant} applications are demonstrated in this chapter.
+
+\hypertarget{example-one}{%
+\section{Example one}\label{example-one}}
+
+\hypertarget{example-two}{%
+\section{Example two}\label{example-two}}
+
+\hypertarget{final-words}{%
+\chapter{Final Words}\label{final-words}}
+
+We have finished a nice book.
+
+\hypertarget{part-back-matter}{%
+\part*{Back Matter}\label{part-back-matter}}
+\addcontentsline{toc}{part}{Back Matter}
+
+\hypertarget{appendix}{%
+\chapter*{Appendix}\label{appendix}}
+\addcontentsline{toc}{chapter}{Appendix}
+
+\bibliography{references.bib}
+
+\end{document}
