@@ -23,10 +23,15 @@ https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guide
 
 `r if (knitr::is_latex_output()) '<!--'` 
 
+```{r} 
+knitr::include_graphics('images/cover.png')
+```
+
 # Welcome {-}
 
 This is the online version of _`r DESCRIPTION$get_field("Title")`_, a book
-**currently under early development** and intended for a late 2021 release.
+**currently under early development** and intended for a late
+`r format(Sys.Date(), "%Y")` release.
 
 ### License {-}
 
