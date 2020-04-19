@@ -1,4 +1,4 @@
-DESCRIPTION <- desc::description$new("../DESCRIPTION")
+assign("DESCRIPTION", desc::description$new("../DESCRIPTION"), envir = globalenv())
 
 makesvg <- function(name = "svg", width = 300, height = 200) {
     if (name == "svg") {

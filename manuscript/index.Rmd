@@ -1,5 +1,5 @@
 --- 
-title: "Tidy Book Template"
+title: "`r DESCRIPTION$get_field('Title')`"
 subtitle: "A Guide for How to Deploy a Book"
 author: "Harel Lustiger"
 date: "`r Sys.Date()`"
