@@ -24,7 +24,7 @@ https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guide
 
 `r if (knitr::is_latex_output()) '<!--'` 
 
-```{r} 
+```{r cover-image, eval = HTML} 
 knitr::include_graphics('images/cover.png')
 ```
 
