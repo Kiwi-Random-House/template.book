@@ -44,3 +44,5 @@ manuscript/_bookdown_files
 manuscript/libs/
 *.log
 *.md
+*.rds
+*.bak
