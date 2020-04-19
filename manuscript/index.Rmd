@@ -1,14 +1,14 @@
 --- 
 title: "`r DESCRIPTION$get_field('Title')`"
-subtitle: "A Guide for How to Deploy a Book"
 author: "`r cat(unlist(DESCRIPTION$get_author())[c('given', 'family')])`"
+subtitle: "`r DESCRIPTION$get_field('Subtitle')`"
+description: "`r DESCRIPTION$get_field('Description')`"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 graphics: yes
 always_allow_html: yes
 ---
