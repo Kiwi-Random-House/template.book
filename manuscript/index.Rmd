@@ -1,7 +1,7 @@
 --- 
 title: "`r DESCRIPTION$get_field('Title')`"
 subtitle: "A Guide for How to Deploy a Book"
-author: "Harel Lustiger"
+author: "`r cat(unlist(DESCRIPTION$get_author())[c('given', 'family')])`"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
