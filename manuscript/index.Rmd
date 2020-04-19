@@ -4,6 +4,7 @@ author: "`r paste(unlist(DESCRIPTION$get_author())[c('given', 'family')], collap
 subtitle: "`r DESCRIPTION$get_field('Description')`"
 description: "`r DESCRIPTION$get_field('Description')`"
 url: "`r DESCRIPTION$get_urls()`"
+github-repo: "`r DESCRIPTION$get_field('GithubRepo')`"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
