@@ -2,9 +2,8 @@
 --- 
 title: "Tidy Book Template"
 author: "Harel Lustiger"
-subtitle: "A guide for how to deploy a book."
-description: "This is a minimal example of using the bookdown package to write a 
-    book. The output format for this example is bookdown::gitbook."
+subtitle: "A Guide for How to Deploy a Book."
+description: "A Guide for How to Deploy a Book."
 url: "https://template-book.netlify.com/"
 date: "2020-04-19"
 site: bookdown::bookdown_site
@@ -14,6 +13,8 @@ biblio-style: apalike
 link-citations: yes
 graphics: yes
 always_allow_html: yes
+cover-image: "images/cover.png"
+favicon: "favicon.ico"
 ---
 
 <!--
