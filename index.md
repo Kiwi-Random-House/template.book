@@ -5,6 +5,7 @@ author: "Harel Lustiger"
 subtitle: "A Guide for How to Deploy a Book."
 description: "A Guide for How to Deploy a Book."
 url: "https://template-book.netlify.com/"
+github-repo: "Kiwi-Random-House/template.book"
 date: "2020-04-19"
 site: bookdown::bookdown_site
 documentclass: book
