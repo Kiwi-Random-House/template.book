@@ -4,8 +4,7 @@ Title: Tidy Book Template
 Subtitle: A guide for how to deploy a book.
 Description: This is a minimal example of using the bookdown package to write a 
     book. The output format for this example is bookdown::gitbook."
-NetlifyURL: https://template-book.netlify.com/
-NetlifyID: 5c028775-217c-44ae-a74d-9bfdf2acc274
+URL: https://template-book.netlify.com/
 Date: 2020-02-26
 Authors@R: 
     c(person(given = "Harel", 
