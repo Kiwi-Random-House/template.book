@@ -36,7 +36,3 @@ packages:
 |package |version |source         |
 |:-------|:-------|:--------------|
 |ggplot2 |3.2.1   |CRAN (R 3.6.2) |
-
-
-
-
