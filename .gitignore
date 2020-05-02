@@ -47,3 +47,4 @@ manuscript/libs/
 *.rds
 *.bak
 _main.Rmd
+manuscript/template.book.html
