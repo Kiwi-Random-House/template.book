@@ -23,7 +23,7 @@ Appendix B2, Appendix C, etc). The order they are presented in is dictated by
 the order they are mentioned in the text of the report. It is essential to refer
 to each appendix within the text of the report; for example,
 
-> For the manufacturer's specification, see [Appendix B](#appendix-ref-label)
+> For the manufacturer's specification, see [Appendix A](#appendix-ref-label)
 
 or
 
