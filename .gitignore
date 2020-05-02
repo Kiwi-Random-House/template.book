@@ -46,3 +46,4 @@ manuscript/libs/
 *.md
 *.rds
 *.bak
+_main.Rmd
