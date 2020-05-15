@@ -1,4 +1,10 @@
+# The DESCRIPTION file ----------------------------------------------------
 assign("DESCRIPTION", desc::description$new("../DESCRIPTION"), envir = globalenv())
+
+
+# Helpers -----------------------------------------------------------------
+rmarkdown$yaml <- rmarkdown <- new.env()
+rmarkdown$yaml$github_repo <- function() {remotes <- gh::gh_tree_remote("..") ;paste0(remotes$username, '/', remotes$repo)}
 
 HTML <- knitr::is_html_output()
 
