@@ -8,8 +8,10 @@
     .Rprofile$NEW_SESSION$set <- function() Sys.setenv(NEW_SESSION = FALSE)
     .Rprofile$NEW_SESSION$get <- function() as.logical(Sys.getenv("NEW_SESSION"))
     .Rprofile$bookdown$clean_book <- function(){
+        unlink <- function(x) base::unlink(x, force = TRUE, recursive = TRUE)
         setwd("./manuscript"); bookdown::clean_book(TRUE); setwd("..")
-        unlink(list.files("./manuscript", "\\.md$", full.names = TRUE), force = TRUE, recursive = !TRUE)
+        unlink(list.files("./manuscript", "\\.md$|\\.rds$|\\.bak$", full.names = TRUE))
+        unlink(paste0("./manuscript/", c("_bookdown_files", "_book")))
     }
     get_repos <- function(){
         DESCRIPTION <- readLines("DESCRIPTION")
@@ -32,7 +34,7 @@
     try({setwd("./manuscript"); source("_common.R"); setwd("..")})
 
     ## Cleanup
-    .Rprofile$bookdown$clean_book()
+    # .Rprofile$bookdown$clean_book()
     
     ## Information
     message("Enable live book preview: RStudio Addins -> BOOKDOWN -> Preview Book")
