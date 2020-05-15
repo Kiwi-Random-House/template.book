@@ -11,7 +11,7 @@
   <meta property="og:title" content="Table of Contents | Tidy Book Template" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://template-book.netlify.com/" />
-  <meta property="og:image" content="https://template-book.netlify.com/images/cover.png" />
+  
   <meta property="og:description" content="A Guide for How to Deploy a Book." />
   <meta name="github-repo" content="Kiwi-Random-House/template.book" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Table of Contents | Tidy Book Template" />
   
   <meta name="twitter:description" content="A Guide for How to Deploy a Book." />
-  <meta name="twitter:image" content="https://template-book.netlify.com/images/cover.png" />
+  
 
 <meta name="author" content="Harel Lustiger" />
 
 
-<meta name="date" content="2020-04-19" />
+<meta name="date" content="2020-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -156,8 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="1-demo.html"><a href="1-demo.html#update-netlify-fields-within-description"><i class="fa fa-check"></i><b>1.8</b> Update Netlify Fields within DESCRIPTION</a></li>
 <li class="chapter" data-level="1.9" data-path="1-demo.html"><a href="1-demo.html#update-github-readme-file"><i class="fa fa-check"></i><b>1.9</b> Update GitHub README File</a></li>
 </ul></li>
-<li class="part"><span><b>Front Matter</b></span></li>
-<li class="chapter" data-level="" data-path="title-page.html"><a href="title-page.html"><i class="fa fa-check"></i>Title Page</a></li>
+<li class="part"><span><b>Part I: Front Matter</b></span></li>
 <li class="chapter" data-level="" data-path="dedication.html"><a href="dedication.html"><i class="fa fa-check"></i>Dedication</a></li>
 <li class="chapter" data-level="" data-path="foreword.html"><a href="foreword.html"><i class="fa fa-check"></i>Foreword</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
@@ -165,12 +164,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i>Table of Contents</a></li>
 <li class="chapter" data-level="" data-path="list-of-abbreviations.html"><a href="list-of-abbreviations.html"><i class="fa fa-check"></i>List of Abbreviations</a></li>
-<li class="part"><span><b>Text Body</b></span></li>
+<li class="part"><span><b>Part II: Text Body</b></span></li>
 <li class="chapter" data-level="2" data-path="2-intro.html"><a href="2-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="2-intro.html"><a href="2-intro.html#terminology"><i class="fa fa-check"></i><b>2.1</b> Terminology</a></li>
-<li class="chapter" data-level="2.2" data-path="2-intro.html"><a href="2-intro.html#useful-materials"><i class="fa fa-check"></i><b>2.2</b> Useful Materials</a></li>
-<li class="chapter" data-level="2.3" data-path="2-intro.html"><a href="2-intro.html#prerequisites"><i class="fa fa-check"></i><b>2.3</b> Prerequisites</a></li>
-<li class="chapter" data-level="2.4" data-path="2-intro.html"><a href="2-intro.html#example"><i class="fa fa-check"></i><b>2.4</b> Example</a></li>
+<li class="chapter" data-level="2.1" data-path="2-intro.html"><a href="2-intro.html#abstract"><i class="fa fa-check"></i><b>2.1</b> Abstract</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-literature.html"><a href="3-literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="4-methods.html"><a href="4-methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
@@ -179,8 +175,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="5-applications.html"><a href="5-applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-final-words.html"><a href="6-final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="part"><span><b>Back Matter</b></span></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
+<li class="part"><span><b>Part III: Back Matter</b></span></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="A-appendix-ref-label.html"><a href="A-appendix-ref-label.html"><i class="fa fa-check"></i><b>A</b> Using Appendices</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 </ul>
@@ -202,6 +199,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="table-of-contents" class="section level1 unnumbered">
 <h1>Table of Contents</h1>
+<!--
+* List all parts, chapters, and back matter material (e.g., an index) in the
+final sequence.
+
+* If your chapters are numbered, use Arabic numerals and number the chapters
+consecutively throughout the book (Chapter 1, Chapter 2, etc.), i.e., do not
+start anew with each part
+
+* If there are parts, use Roman numerals for parts (Part I, Part II, etc.).
+
+See Key style points: table of contents at
+https://resource-cms.springernature.com/springer-cms/rest/v1/content/19114/data/v3
+-->
 
 </div>
             </section>
@@ -252,7 +262,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["template.book.pdf", "template.book.epub"],
+"download": ["template.book.pdf"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

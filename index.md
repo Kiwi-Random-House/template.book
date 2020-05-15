@@ -6,7 +6,7 @@ subtitle: "A Guide for How to Deploy a Book."
 description: "A Guide for How to Deploy a Book."
 url: "https://template-book.netlify.com/"
 github-repo: "Kiwi-Random-House/template.book"
-date: "2020-04-19"
+date: "2020-05-15"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib]
@@ -14,13 +14,13 @@ biblio-style: apalike
 link-citations: yes
 graphics: yes
 always_allow_html: yes
-cover-image: "images/cover.png"
+cover-image: ""
 favicon: "favicon.ico"
 ---
 
-<!--
-Springer book structure
-https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guidelines/book-manuscript-guidelines/book-structure/5640
+<!-- 
+* [Springer Manuscript Guidelines](https://www.springer.com/cda/content/document/cda_downloaddocument/9010+Manuscript+Style+Guidelines.pdf?SGWID=0-0-45-1594878-p180441155)
+* [Springer Key Style Points](https://www.springer.com/cda/content/document/cda_downloaddocument/Manuscript+Key+Style+Points?SGWID=0-0-45-1410203-p175157688) 
 -->
 
  
@@ -33,7 +33,7 @@ This is the online version of _Tidy Book Template_, a book
 **currently under early development** and intended for a late
 2020 release.
 
-### License {-}
+## License {-}
 
 This book is licensed to you under [Creative Commons
 Attribution-NonCommercial-NoDerivatives 4.0 International
