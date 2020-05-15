@@ -13,7 +13,7 @@ biblio-style: apalike
 link-citations: yes
 graphics: yes
 always_allow_html: yes
-cover-image: "images/cover.png"
+cover-image: "`r rmarkdown$yaml$cover_image()`"
 favicon: "favicon.ico"
 ---
 
@@ -24,7 +24,7 @@ favicon: "favicon.ico"
 
 `r if (knitr::is_latex_output()) '<!--'` 
 
-```{r cover-image, eval = HTML} 
+```{r cover-image, eval = knitr::is_html_output()} 
 knitr::include_graphics('images/cover.png')
 ```
 
