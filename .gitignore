@@ -48,3 +48,4 @@ manuscript/libs/
 *.bak
 _main.Rmd
 manuscript/template.book.html
+*.epub
