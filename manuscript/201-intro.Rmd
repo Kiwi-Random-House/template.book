@@ -1,56 +1,36 @@
+
 # Introduction {#intro}
 
-## Terminology
+<!--
+What Structure Overview
 
-The following terms come up repeatedly in discussion of machine learning[@GoogleRulesML]:
+Chapters contain the actual content of the book, i.e., text, figures, tables,
+and references. Chapters can be grouped together in parts; subparts are not
+possible. Only one chapter (e.g. an introduction) may precede the first part and
+would be the first chapter.
 
-* **Instance**: The thing about which you want to make a prediction. For
-example, the instance might be a web page that you want to classify as either
-"about cats" or "not about cats".
-* **Label**: An answer for a prediction task; either the answer produced by a
-machine learning system, or the right answer supplied in training data. For
-example, the label for a web page might be "about cats".
-* **Feature**: A property of an instance used in a prediction task. For example,
-a web page might have a feature "contains the word 'cat'".
-* **Feature Column**: A set of related features, such as the set of all possible
-countries in which users might live. An example may have one or more features
-present in a feature column. "Feature column" is Google-specific terminology. A
-feature column is referred to as a "namespace" in the VW system (at
-Yahoo/Microsoft), or a field. Example: An instance (with its features) and a
-label.
-* **Model**: A statistical representation of a prediction task. You train a
-model on examples then use the model to make predictions.
-* **Metric**: A number that you care about. May or may not be directly
-optimized.
-* **Objective**: A metric that your algorithm is trying to optimize.
-* **Pipeline**: The infrastructure surrounding a machine learning algorithm.
-Includes gathering the data from the front end, putting it into training data
-files, training one or more models, and exporting the models to production.
+* Decide the numbering style for the chapters and apply this style consistently
+to all chapters: consecutively numbered (monographs or textbooks) or unnumbered
+(contributed volumes).
 
-## Useful Materials
+* If an introduction to the subject of the book (historical background,
+definitions, or methodology) is included, it should appear as the first chapter
+and thus be included in the chapter numbering. It can contain references,
+figures, and tables, just as any other chapter.
+-->
 
-- [`bookdown`: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
-- [`papaja`: Reproducible APA manuscripts with R Markdown](https://crsh.github.io/papaja_man/)
+## Abstract
 
-## Prerequisites
+<!--
+Begin each chapter with an abstract that summarizes the content of the chapter
+in 150 to 250 (aim at 200) words. 
 
+If no abstract is submitted, the first paragraph of the chapter is viewd as
+abstract instead.
 
-## Example
+Tip:
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
-
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
-
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
-
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
+* Don’t include reference citations or undefined abbreviations in the abstract,
+since abstracts are often read independently of the actual chapter and without
+access to the reference list.
+-->

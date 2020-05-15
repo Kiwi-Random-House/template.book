@@ -17,10 +17,10 @@ cover-image: "images/cover.png"
 favicon: "favicon.ico"
 ---
 
-<!--
-Springer book structure
-https://www.springer.com/gp/authors-editors/book-authors-editors/resources-guidelines/book-manuscript-guidelines/book-structure/5640
--->
+`r '<!--'` 
+* [Springer Manuscript Guidelines](https://www.springer.com/cda/content/document/cda_downloaddocument/9010+Manuscript+Style+Guidelines.pdf?SGWID=0-0-45-1594878-p180441155)
+* [Springer Key Style Points](https://www.springer.com/cda/content/document/cda_downloaddocument/Manuscript+Key+Style+Points?SGWID=0-0-45-1410203-p175157688) 
+`r '-->'`
 
 `r if (knitr::is_latex_output()) '<!--'` 
 
