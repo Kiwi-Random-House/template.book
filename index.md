@@ -33,7 +33,7 @@ This is the online version of _Tidy Book Template_, a book
 **currently under early development** and intended for a late
 2020 release.
 
-### License {-}
+## License {-}
 
 This book is licensed to you under [Creative Commons
 Attribution-NonCommercial-NoDerivatives 4.0 International
