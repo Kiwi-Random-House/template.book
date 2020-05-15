@@ -3,7 +3,7 @@ Type: Book
 Title: Tidy Book Template
 Description: A Guide for How to Deploy a Book.
 URL: https://template-book.netlify.com/
-GithubRepo: Kiwi-Random-House/template.book
+Version: 1.0.1
 Date: 2020-02-26
 Authors@R: 
     c(person(given = "Harel", 
