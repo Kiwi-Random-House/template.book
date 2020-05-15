@@ -14,7 +14,7 @@ biblio-style: apalike
 link-citations: yes
 graphics: yes
 always_allow_html: yes
-cover-image: "images/cover.png"
+cover-image: ""
 favicon: "favicon.ico"
 ---
 
