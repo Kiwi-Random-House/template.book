@@ -1,6 +1,14 @@
+# The DESCRIPTION file ----------------------------------------------------
 assign("DESCRIPTION", desc::description$new("../DESCRIPTION"), envir = globalenv())
 
-HTML <- knitr::is_html_output()
+
+# Helpers -----------------------------------------------------------------
+rmarkdown$yaml <- rmarkdown <- new.env()
+rmarkdown$yaml$cover_image <- function() NULL # "images/cover.png" 
+rmarkdown$yaml$github_repo <- function() tryCatch(
+    {remotes <- gh::gh_tree_remote(".."); paste0(remotes$username, '/', remotes$repo)}, 
+    error = function(e) return()
+)
 
 makesvg <- function(name = "svg", width = 300, height = 200) {
     if (name == "svg") {
@@ -21,8 +29,7 @@ knitr::opts_chunk$set(
     message = FALSE,
     warning = FALSE,
     cache = TRUE,
-    comment = "## R output ## ",
-    # comment = "#>",
+    comment = "#>",
     fig.retina = 0.8, # figures are either vectors or 300 dpi diagrams
     dpi = 300,
     out.width = "70%",

@@ -29,8 +29,8 @@
     options(Ncpus = 8, repos = structure(c(CRAN = get_repos())), dependencies = "Imports", build = FALSE)    
     
     ## Set global variables
-    assign("DESCRIPTION", desc::description$new("./DESCRIPTION"), envir = globalenv())
-    
+    try({setwd("./manuscript"); source("_common.R"); setwd("..")})
+
     ## Cleanup
     .Rprofile$bookdown$clean_book()
     
