@@ -6,7 +6,7 @@ subtitle: "A Guide for How to Deploy a Book."
 description: "A Guide for How to Deploy a Book."
 url: "https://template-book.netlify.com/"
 github-repo: "Kiwi-Random-House/template.book"
-date: "2020-05-15"
+date: "2020-05-17"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib]
