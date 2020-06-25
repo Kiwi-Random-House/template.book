@@ -1,4 +1,3 @@
-
 --- 
 title:       "Tidy Book Template"
 author:      "Harel Lustiger"
@@ -43,13 +42,13 @@ public domain.
 
 ## Colophon {-}
 
-This version of the book was built with R version 3.6.2 (2017-01-27) and the following
+This version of the book was built with R version 4.0.0 (2020-04-24) and the following
 packages:
 
 
 |Package |Version |Description                                                      |
 |:-------|:-------|:----------------------------------------------------------------|
-|ggplot2 |3.2.1   |Create Elegant Data Visualisations Using the Grammar of Graphics |
+|ggplot2 |3.3.0   |Create Elegant Data Visualisations Using the Grammar of Graphics |
 
 You can install all of the packages at once by running:
 

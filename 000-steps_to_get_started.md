@@ -1,4 +1,3 @@
-
 # Steps to Get Started {#demo}
 
 ## Create a New Book on GitHub using the Template
