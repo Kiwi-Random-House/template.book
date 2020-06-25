@@ -20,24 +20,3 @@ heading “Acknowledgements”.
 
 <!-- see https://github.com/hadley/mastering-shiny/blob/master/introduction.Rmd -->
 
-## Colophon {-}
-
-This book was written in [RStudio](http://www.rstudio.com/ide/) using
-[bookdown](http://bookdown.org/). The [website](http://mastering-shiny.org/) is
-hosted with [netlify](http://netlify.com/), and automatically updated after
-every commit by [travis-ci](https://travis-ci.org/). The complete source is
-available from [GitHub](https://github.com/Kiwi-Random-House/template.book).
-
-This version of the book was built with `r R.version.string` and the following
-packages:
-
-```{r get_book_packages, echo = FALSE, results="asis", cache = FALSE}
-imports <- subset(DESCRIPTION$get_deps(), type == "Imports", "package", TRUE)
-pkgs <- sessioninfo::package_info(sort(imports), dependencies = FALSE)
-df <- tibble::tibble(
-  package = pkgs$package,
-  version = pkgs$ondiskversion,
-  source = gsub("@", "\\\\@", pkgs$source)
-)
-knitr::kable(df, format = "markdown")
-```
