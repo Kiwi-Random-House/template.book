@@ -1,28 +1,22 @@
 # The DESCRIPTION file ----------------------------------------------------
 assign("DESCRIPTION", desc::description$new("../DESCRIPTION"), envir = globalenv())
 
-
-# Helpers -----------------------------------------------------------------
-rmarkdown$yaml <- rmarkdown <- new.env()
-rmarkdown$yaml$cover_image <- function() NULL # "images/cover.png" 
-rmarkdown$yaml$github_repo <- function() tryCatch(
+# Book Metadata -----------------------------------------------------------
+index <- new.env()
+index$title <- function() DESCRIPTION$get_field('Title')
+index$author <- function() paste(unlist(DESCRIPTION$get_author())[c('given', 'family')], collapse = ' ')
+index$subtitle <- function() DESCRIPTION$get_field('Description')
+index$description <- function() DESCRIPTION$get_field('Description')
+index$date <- base::Sys.Date
+index$url <- function() DESCRIPTION$get_urls()
+index$cover_image <- function() NULL # "images/cover.png" 
+index$favicon <- function() "favicon.ico"
+index$github_repo <- function() tryCatch(
     {remotes <- gh::gh_tree_remote(".."); paste0(remotes$username, '/', remotes$repo)}, 
     error = function(e) return()
 )
 
-makesvg <- function(name = "svg", width = 300, height = 200) {
-    if (name == "svg") {
-        selector <- "svg"
-    } else {
-        selector <- paste0("svg#", name)
-    }
-    
-    cat(paste0("<svg id='", name, "' width='", width,"' height='", height, "'>\n"))
-    cat(paste0("<rect x='0' y='0' width='", width, "' height ='",  height, "' fill = 'lightblue'></rect>\n"))
-    cat(paste0("<text x='10' y='", height - 10, "' style = 'font-size: 80%;'>", selector, "</text>\n"))
-    cat("</svg>")
-}
-
+# Helpers -----------------------------------------------------------------
 knitr::opts_chunk$set(
     out.width='100%',
     echo = FALSE,
