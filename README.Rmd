@@ -1,5 +1,5 @@
 ---
-    output: github_document
+output: github_document
 ---
 
 ```{r, include = FALSE}
@@ -11,7 +11,6 @@ knitr::opts_chunk$set(
     out.width = "100%"
 )
 try(remotes::install_cran(c("desc", "stringr", "yaml")))
-preview_branch <- yaml::read_yaml(".travis.yml")$deploy[[2]]$target_branch
 
 desc_obj <- desc::description$new()
 netlify_url <- stringr::str_remove_all(desc_obj$get_field("NetlifyURL"), "^https://")
