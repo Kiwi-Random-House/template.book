@@ -4,7 +4,7 @@ Title: Tidy Book Template
 Description: A Guide for How to Deploy a Book.
 URL: https://template-book.netlify.com/
 Version: 1.0.1
-Date: 2020-02-26
+Date: 2020-04-24
 Authors@R: 
     c(person(given = "Harel", 
              family = "Lustiger", 
