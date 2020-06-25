@@ -228,12 +228,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="set-ssh-key-pair-via-travis" class="section level2">
 <h2><span class="header-section-number">1.4</span> Set SSH key pair via travis</h2>
 <p>Only needed when deploying from builds on Travis CI or GitHub Actions.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Install travis R package</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;ropenscilabs/travis&quot;</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co"># Generate SSH</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">travis<span class="op">::</span><span class="kw">browse_travis_token</span>()</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">travis<span class="op">::</span><span class="kw">use_travis_deploy</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Install travis R package</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;ropenscilabs/travis&quot;</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co"># Generate SSH</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">travis<span class="op">::</span><span class="kw">browse_travis_token</span>()</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">travis<span class="op">::</span><span class="kw">use_travis_deploy</span>()</a></code></pre></div>
 </div>
 <div id="trigger-travis-to-deploy-the-book" class="section level2">
 <h2><span class="header-section-number">1.5</span> Trigger Travis to Deploy the Book</h2>

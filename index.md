@@ -53,3 +53,8 @@ packages:
 You can install all of the packages at once by running:
 
 
+```r
+install.packages(c(
+  "ggplot2" 
+))
+```
