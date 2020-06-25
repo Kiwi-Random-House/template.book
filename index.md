@@ -41,3 +41,16 @@ public domain.
 
 
 
+## Colophon {-}
+
+This version of the book was built with R version 3.6.2 (2017-01-27) and the following
+packages:
+
+
+|Package |Version |Description                                                      |
+|:-------|:-------|:----------------------------------------------------------------|
+|ggplot2 |3.2.1   |Create Elegant Data Visualisations Using the Grammar of Graphics |
+
+You can install all of the packages at once by running:
+
+
