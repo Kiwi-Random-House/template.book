@@ -2,37 +2,35 @@
 output: github_document
 ---
 
-```{r, include = FALSE}
-`%+%` <- function(a,b) paste0(a,b)
-knitr::opts_chunk$set(
-    collapse = TRUE,
-    comment = "#>",
-    fig.path = "man/figures/README-",
-    out.width = "100%"
-)
+```{setup, include = FALSE}
 try(remotes::install_cran(c("desc", "stringr", "yaml")))
+```
 
+```{r helpers, echo = FALSE}
+generate_shield_src <- function(label = "codecov", message = "0%", color = "red"){
+    replace_symbols <- function(x){
+        x <- gsub("%", "%25", x)
+        x <- gsub(" ", "%20", x)
+        x <- gsub("-", "--", x)
+        x <- gsub("_", "__", x)
+        return(x)
+    }
+
+    paste0("https://img.shields.io/badge/", replace_symbols(label), "-", replace_symbols(message), "-", color, ".svg")
+}
+```
+
+```{r badges}
 desc_obj <- desc::description$new()
-netlify_url <- stringr::str_remove_all(desc_obj$get_field("NetlifyURL"), "^https://")
-netlify_id <- desc_obj$get_field("NetlifyID")
-netlify_site_name <- stringr::str_remove_all(netlify_url, ".netlify.com/")
-
-netlify_badge <- "https://img.shields.io/netlify/" %+% netlify_id
-netlify_link <- "https://app.netlify.com/sites/" %+% netlify_site_name %+% "/deploys"
-
-view_badge <- "https://img.shields.io/badge/Book%20Version-Published-0087BD.svg"
-view_link <- "https://" %+% netlify_url
-
-preview_badge <- "https://img.shields.io/badge/Book%20Version-Preview-ff69b4.svg"
-preview_link <- "https://" %+% preview_branch %+% "--" %+% netlify_url
+url_published <- desc_obj$get_urls()[1]
+url_preview <- desc_obj$get_urls()[2]
 ```
 
 # `r desc_obj$get_field("Title")`
 
 <!-- badges: start -->
-[![Published Version](`r view_badge`)](`r view_link`)
-[![Preview Version](`r preview_badge`)](`r preview_link`)
-[![Netlify Status](`r netlify_badge`)](`r netlify_link`)
+[![Published Version](`r generate_shield_src("Book Version", "Published", "0087BD")`)](`r url_published`)
+[![Preview Version](`r generate_shield_src("Book Version", "Preview", "ff69b4")`)](`r url_preview`)
 <!-- badges: end -->
 
 ---
