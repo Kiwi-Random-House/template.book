@@ -5,7 +5,7 @@ Description: A Guide for How to Deploy a Book.
 URL: 
     https://template-book.netlify.com/,
     https://gh-preview--template-book.netlify.app/
-Version: 1.0.1
+Version: 1.1.0
 Date: 2020-04-24
 Authors@R: 
     c(person(given = "Harel", 
