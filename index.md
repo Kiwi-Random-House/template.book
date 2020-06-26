@@ -3,9 +3,9 @@ title:       "Tidy Book Template"
 author:      "Harel Lustiger"
 subtitle:    "A Guide for How to Deploy a Book."
 description: "A Guide for How to Deploy a Book."
-url:         "https://template-book.netlify.com/"
+url:         "https://template-book.netlify.com/, https://gh-preview--template-book.netlify.app/"
 github-repo: "Kiwi-Random-House/template.book"
-date:        "2020-06-25"
+date:        "2020-06-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib]
