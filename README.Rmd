@@ -1,39 +1,60 @@
 ---
-    output: github_document
+output: github_document
 ---
 
-```{r, include = FALSE}
-`%+%` <- function(a,b) paste0(a,b)
-knitr::opts_chunk$set(
-    collapse = TRUE,
-    comment = "#>",
-    fig.path = "man/figures/README-",
-    out.width = "100%"
-)
-try(remotes::install_cran(c("desc", "stringr", "yaml")))
-preview_branch <- yaml::read_yaml(".travis.yml")$deploy[[2]]$target_branch
-
+```{r setup, echo = FALSE, results = 'hide', message = FALSE, warning = FALSE, include= FALSE}
+knitr::opts_chunk$set(results = FALSE, echo = FALSE, message = FALSE)
+try(remotes::install_cran(c("desc", "stringr", "gh")))
 desc_obj <- desc::description$new()
-netlify_url <- stringr::str_remove_all(desc_obj$get_field("NetlifyURL"), "^https://")
-netlify_id <- desc_obj$get_field("NetlifyID")
-netlify_site_name <- stringr::str_remove_all(netlify_url, ".netlify.com/")
+```
 
-netlify_badge <- "https://img.shields.io/netlify/" %+% netlify_id
-netlify_link <- "https://app.netlify.com/sites/" %+% netlify_site_name %+% "/deploys"
+```{r helpers}
+glue <- stringr::str_glue
+get_branch <- function() return("master")
+get_slug <- function(){remotes <- gh::gh_tree_remote(".."); paste0(remotes$username, '/', remotes$repo)}
+generate_shield_src <- function(label = "codecov", message = "0%", color = "red"){
+    replace_symbols <- function(x){
+        x <- gsub("%", "%25", x)
+        x <- gsub(" ", "%20", x)
+        x <- gsub("-", "--", x)
+        x <- gsub("_", "__", x)
+        return(x)
+    }
+    
+    paste0("https://img.shields.io/badge/", replace_symbols(label), "-", replace_symbols(message), "-", color, ".svg")
+}
+```
 
-view_badge <- "https://img.shields.io/badge/Book%20Version-Published-0087BD.svg"
-view_link <- "https://" %+% netlify_url
+```{r badges}
+badges <- list()
 
-preview_badge <- "https://img.shields.io/badge/Book%20Version-Preview-ff69b4.svg"
-preview_link <- "https://" %+% preview_branch %+% "--" %+% netlify_url
+badges$published <- list(
+    badge_name = "Published Version", 
+    href = desc_obj$get_urls()[1], 
+    src = generate_shield_src("Book Version", "Published", "0087BD")
+)
+
+badges$preview <- list(
+    badge_name = "Preview Version", 
+    href = desc_obj$get_urls()[2], 
+    src = generate_shield_src("Book Version", "Preview", "ff69b4")
+)
+
+badges$travis <- list(
+    badge_name = "Continuous Integration", 
+    href = glue("https://travis-ci.org/{slug}", slug = get_slug()), 
+    src = glue("https://travis-ci.org/{slug}.svg?branch={branch}", slug = get_slug(), branch = get_branch())
+)
+
+invisible(lapply(badges, do.call, what = usethis::use_badge))
 ```
 
 # `r desc_obj$get_field("Title")`
 
 <!-- badges: start -->
-[![Published Version](`r view_badge`)](`r view_link`)
-[![Preview Version](`r preview_badge`)](`r preview_link`)
-[![Netlify Status](`r netlify_badge`)](`r netlify_link`)
+[![Published Version](https://img.shields.io/badge/Book%20Version-Published-0087BD.svg)](https://template-book.netlify.com/)
+[![Preview Version](https://img.shields.io/badge/Book%20Version-Preview-ff69b4.svg)](https://gh-preview--template-book.netlify.app/)
+[![Continuous Integration](https://travis-ci.org/Kiwi-Random-House/template.book.svg?branch=master)](https://travis-ci.org/Kiwi-Random-House/template.book)
 <!-- badges: end -->
 
 ---

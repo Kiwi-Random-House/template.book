@@ -25,7 +25,7 @@
     if(isFALSE(.Rprofile$NEW_SESSION$get())) return() else .Rprofile$NEW_SESSION$set()
     
     ## Set global options
-    options(startup.check.options.ignore = "stringsAsFactors", stringsAsFactors = TRUE)
+    options(startup.check.options.ignore = "stringsAsFactors")
     
     ## Initiate the package management system
     options(Ncpus = 8, repos = structure(c(CRAN = get_repos())), dependencies = "Imports", build = FALSE)    
