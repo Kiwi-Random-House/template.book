@@ -2,11 +2,13 @@
 output: github_document
 ---
 
-```{setup, include = FALSE}
+```{r setup, echo = FALSE, results = 'hide', message = FALSE, warning = FALSE, include= FALSE}
+knitr::opts_chunk$set(results = FALSE, echo = FALSE, message = FALSE)
 try(remotes::install_cran(c("desc", "stringr", "yaml")))
+desc_obj <- desc::description$new()
 ```
 
-```{r helpers, echo = FALSE}
+```{r helpers}
 generate_shield_src <- function(label = "codecov", message = "0%", color = "red"){
     replace_symbols <- function(x){
         x <- gsub("%", "%25", x)
@@ -21,16 +23,28 @@ generate_shield_src <- function(label = "codecov", message = "0%", color = "red"
 ```
 
 ```{r badges}
-desc_obj <- desc::description$new()
-url_published <- desc_obj$get_urls()[1]
-url_preview <- desc_obj$get_urls()[2]
+badges <- list()
+
+badges$published <- list(
+  badge_name = "Published Version", 
+  href = desc_obj$get_urls()[1], 
+  src = generate_shield_src("Book Version", "Published", "0087BD")
+)
+
+badges$preview <- list(
+  badge_name = "Preview Version", 
+  href = desc_obj$get_urls()[2], 
+  src = generate_shield_src("Book Version", "Preview", "ff69b4")
+)
+
+invisible(lapply(badges, do.call, what = usethis::use_badge))
 ```
 
 # `r desc_obj$get_field("Title")`
 
 <!-- badges: start -->
-[![Published Version](`r generate_shield_src("Book Version", "Published", "0087BD")`)](`r url_published`)
-[![Preview Version](`r generate_shield_src("Book Version", "Preview", "ff69b4")`)](`r url_preview`)
+[![Published Version](https://img.shields.io/badge/Book%20Version-Published-0087BD.svg)](https://template-book.netlify.com/)
+[![Preview Version](https://img.shields.io/badge/Book%20Version-Preview-ff69b4.svg)](https://gh-preview--template-book.netlify.app/)
 <!-- badges: end -->
 
 ---

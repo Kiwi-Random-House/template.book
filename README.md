@@ -1,10 +1,4 @@
 
-``` r
-desc_obj <- desc::description$new()
-url_published <- desc_obj$get_urls()[1]
-url_preview <- desc_obj$get_urls()[2]
-```
-
 # Tidy Book Template
 
 <!-- badges: start -->
