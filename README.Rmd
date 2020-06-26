@@ -9,6 +9,9 @@ desc_obj <- desc::description$new()
 ```
 
 ```{r helpers}
+glue <- stringr::str_glue
+get_slug <- tic::ci_get_slug
+get_branch <- function() return("master")
 generate_shield_src <- function(label = "codecov", message = "0%", color = "red"){
     replace_symbols <- function(x){
         x <- gsub("%", "%25", x)
@@ -37,6 +40,12 @@ badges$preview <- list(
   src = generate_shield_src("Book Version", "Preview", "ff69b4")
 )
 
+badges$travis <- list(
+  badge_name = "Continuous Integration", 
+  href = glue("https://travis-ci.org/{slug}", slug = get_slug()), 
+  src = glue("https://travis-ci.org/{slug}.svg?branch={branch}", slug = get_slug(), branch = get_branch())
+)
+
 invisible(lapply(badges, do.call, what = usethis::use_badge))
 ```
 
@@ -45,6 +54,7 @@ invisible(lapply(badges, do.call, what = usethis::use_badge))
 <!-- badges: start -->
 [![Published Version](https://img.shields.io/badge/Book%20Version-Published-0087BD.svg)](https://template-book.netlify.com/)
 [![Preview Version](https://img.shields.io/badge/Book%20Version-Preview-ff69b4.svg)](https://gh-preview--template-book.netlify.app/)
+[![Continuous Integration](https://travis-ci.org/Kiwi-Random-House/template.book.svg?branch=master)](https://travis-ci.org/Kiwi-Random-House/template.book)
 <!-- badges: end -->
 
 ---
