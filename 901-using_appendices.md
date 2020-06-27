@@ -1,4 +1,3 @@
-
 # Using Appendices {#appendix-ref-label}
 
 Information that is not essential to explain your findings, but that supports

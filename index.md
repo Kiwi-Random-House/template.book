@@ -1,12 +1,11 @@
-
 --- 
-title: "Tidy Book Template"
-author: "Harel Lustiger"
-subtitle: "A Guide for How to Deploy a Book."
+title:       "Tidy Book Template"
+author:      "Harel Lustiger"
+subtitle:    "A Guide for How to Deploy a Book."
 description: "A Guide for How to Deploy a Book."
-url: "https://template-book.netlify.com/"
+url:         "https://template-book.netlify.com/, https://gh-preview--template-book.netlify.app/"
 github-repo: "Kiwi-Random-House/template.book"
-date: "2020-05-15"
+date:        "2020-06-27"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib]
@@ -15,13 +14,8 @@ link-citations: yes
 graphics: yes
 always_allow_html: yes
 cover-image: ""
-favicon: "favicon.ico"
+favicon:     "favicon.ico"
 ---
-
-<!-- 
-* [Springer Manuscript Guidelines](https://www.springer.com/cda/content/document/cda_downloaddocument/9010+Manuscript+Style+Guidelines.pdf?SGWID=0-0-45-1594878-p180441155)
-* [Springer Key Style Points](https://www.springer.com/cda/content/document/cda_downloaddocument/Manuscript+Key+Style+Points?SGWID=0-0-45-1410203-p175157688) 
--->
 
  
 
@@ -30,8 +24,9 @@ favicon: "favicon.ico"
 # Welcome {-}
 
 This is the online version of _Tidy Book Template_, a book
-**currently under early development** and intended for a late
-2020 release.
+**currently under early development** and intended for a late 
+2020 release by [Kiwi Random
+House](https://github.com/Kiwi-Random-House).
 
 ## License {-}
 
@@ -45,3 +40,21 @@ public domain.
 
 
 
+## Colophon {-}
+
+This version of the book was built with R version 4.0.0 (2020-04-24) and the following
+packages:
+
+
+|Package |Version |Description                                                      |
+|:-------|:-------|:----------------------------------------------------------------|
+|ggplot2 |3.3.0   |Create Elegant Data Visualisations Using the Grammar of Graphics |
+
+You can install all of the packages at once by running:
+
+
+```r
+install.packages(c(
+  "ggplot2" 
+))
+```
